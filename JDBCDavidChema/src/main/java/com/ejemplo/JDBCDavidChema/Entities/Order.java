@@ -284,6 +284,5 @@ public class Order {
 				+ (status_id != null ? "status_id=" + status_id : "") + "]";
 	}
 	
-	
 
 }
