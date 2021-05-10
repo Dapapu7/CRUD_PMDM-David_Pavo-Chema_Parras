@@ -15,7 +15,7 @@ public class App {
 		
 			System.out.println("Conexion a la BBDD con éxito");
 			
-			pedido = misPedidos.read(4);  //Leemos el pedido con id = 11
+			pedido = misPedidos.read(30);  //Leemos el pedido con id = 30
 			
 			if(pedido != null)  //Si el pedido es distinto de null
 				System.out.println(pedido.toString());  //Convertimos el pedido a String

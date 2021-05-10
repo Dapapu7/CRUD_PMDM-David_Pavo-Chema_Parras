@@ -43,7 +43,7 @@ public class OrdersModel {
 				+ "`tax_rate`, "
 				+ "`tax_status_id`, "
 				+ "`status_id`"
-				+ " FROM orders WHERE " + id;
+				+ " FROM orders WHERE id=" + id;
 
 		try {
 			statement = conexion.createStatement();  //Creamos la sentencia
