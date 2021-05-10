@@ -49,26 +49,28 @@ public class OrdersModel {
 			statement = conexion.createStatement();  //Creamos la sentencia
 			ResultSet myResultSet = statement.executeQuery(sql);  //Ejecutamos la sentencia y la guardamos en forma de "tabla"
 			while (myResultSet.next()) {
-					myResultSet.getInt("id");
-					myResultSet.getInt("employee_id");
-					myResultSet.getInt("customer_id");
-					myResultSet.getDate("order_date");
-					myResultSet.getDate("shipped_date");
-					myResultSet.getInt("shipper_id");
-					myResultSet.getString("ship_name");
-					myResultSet.getString("ship_address");
-					myResultSet.getString("ship_city");
-					myResultSet.getString("ship_state_province");
-					myResultSet.getString("ship_zip_postal_code");
-					myResultSet.getString("ship_country_region");
-					myResultSet.getBigDecimal("shipping_fee");
-					myResultSet.getBigDecimal("taxes");
-					myResultSet.getString("payment_type");
-					myResultSet.getDate("paid_date");
-					myResultSet.getString("notes");
-					myResultSet.getDouble("tax_rate");
-					myResultSet.getBoolean("tax_status_id");
-					myResultSet.getBoolean("status_id");
+				pedido = new Order(
+					myResultSet.getInt("id"),
+					myResultSet.getInt("employee_id"),
+					myResultSet.getInt("customer_id"),
+					myResultSet.getDate("order_date"),
+					myResultSet.getDate("shipped_date"),
+					myResultSet.getInt("shipper_id"),
+					myResultSet.getString("ship_name"),
+					myResultSet.getString("ship_address"),
+					myResultSet.getString("ship_city"),
+					myResultSet.getString("ship_state_province"),
+					myResultSet.getString("ship_zip_postal_code"),
+					myResultSet.getString("ship_country_region"),
+					myResultSet.getBigDecimal("shipping_fee"),
+					myResultSet.getBigDecimal("taxes"),
+					myResultSet.getString("payment_type"),
+					myResultSet.getDate("paid_date"),
+					myResultSet.getString("notes"),
+					myResultSet.getDouble("tax_rate"),
+					myResultSet.getBoolean("tax_status_id"),
+					myResultSet.getBoolean("status_id")
+				);
 			}
 		} catch (SQLException e) {
 			System.err.println("Error en read ORDERS " + e.getMessage());
