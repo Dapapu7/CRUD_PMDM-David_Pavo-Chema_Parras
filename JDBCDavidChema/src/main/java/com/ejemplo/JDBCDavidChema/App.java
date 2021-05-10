@@ -29,6 +29,22 @@ public class App {
 			pedido = misPedidos.read(id);
 			pedido.setPayment_type("hola");
 			
+			
+			if(misPedidos.update(pedido)) {
+                System.out.println("Pedido actualizado correctamente, veamos si es verdad: ");
+                pedido = misPedidos.read(id);
+                System.out.println(pedido.toString());
+            }
+            else
+                System.err.println("No he podido leer el pedido");
+			
+			
+			boolean idpedido = misPedidos.delete(86);
+			System.out.println("Acabo de borrar un pedido");
+			
+			
+			
+			
 			System.out.println();
 			System.out.println();
 			System.out.println("Ahora vamos a leer el cliente");
