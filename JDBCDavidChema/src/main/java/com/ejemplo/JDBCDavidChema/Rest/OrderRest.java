@@ -17,7 +17,6 @@ import javax.ws.rs.core.Response;
 
 import com.ejemplo.JDBCDavidChema.Entities.Order;
 import com.ejemplo.JDBCDavidChema.Models.OrdersModel;
-import com.mysql.jdbc.BestResponseTimeBalanceStrategy;
 
 @Path("pedidos")
 public class OrderRest {
