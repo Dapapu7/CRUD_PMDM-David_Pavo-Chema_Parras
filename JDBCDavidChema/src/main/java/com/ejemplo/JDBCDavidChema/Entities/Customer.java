@@ -9,19 +9,19 @@ import javax.json.bind.annotation.JsonbPropertyOrder;
     		     "firstName", 
     		     "lastName", 
     		     "company", 
-                     "emailAddress", 
-                     "businessPhone", 
-                     "mobilePhone", 
-                     "jobTitle", 
-                     "homePhone", 
-                     "faxNumber", 
-                     "address", 
-                     "city", 
-                     "zipPostalCode", 
-                     "stateProvince", 
-                     "countryRegion", 
-                     "countryRegion", 
-                     "notes"})
+                 "emailAddress", 
+                 "businessPhone", 
+                 "mobilePhone", 
+                 "jobTitle", 
+                 "homePhone", 
+                 "faxNumber", 
+                 "address", 
+                 "city", 
+                 "zipPostalCode", 
+                 "stateProvince", 
+                 "countryRegion", 
+                 "countryRegion", 
+				 "notes"})
 public class Customer {
 	private Integer id;
 	private String company;

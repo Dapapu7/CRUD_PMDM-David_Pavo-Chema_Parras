@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import com.ejemplo.JDBCDavidChema.Entities.Order;
 import com.ejemplo.JDBCDavidChema.Models.OrdersModel;
 
-public class App {
+public class AppPedidos {
 
 	public static void main(String[] args) {
 		

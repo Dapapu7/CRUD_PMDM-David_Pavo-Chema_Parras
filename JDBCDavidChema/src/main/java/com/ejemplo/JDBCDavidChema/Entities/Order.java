@@ -50,6 +50,10 @@ public class Order {
 	private Boolean status_id;
 	
 
+	public Order() {
+	}
+
+
 	public Order(Integer id, Integer employee_id, Integer customer_id, Date order_date, Date shipped_date,
 			Integer shipper_id, String ship_name, String ship_address, String ship_city, String ship_state_province,
 			String ship_zip_postal_code, String ship_country_region, BigDecimal shipping_fee, BigDecimal taxes,
