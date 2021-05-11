@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import javax.sql.DataSource;
 
 import com.ejemplo.JDBCDavidChema.DBFactory.DBFactory;
-import com.ejemplo.JDBCDavidChema.Entities.Customer;
 import com.ejemplo.JDBCDavidChema.Entities.Order;
 
 public class OrdersModel {

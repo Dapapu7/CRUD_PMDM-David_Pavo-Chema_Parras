@@ -74,8 +74,7 @@ public class CustomerRest {
 	    idcliente = customers.insert(cliente);
 	    response = Response.status(Response.Status.CREATED).entity(idcliente).build();
 	} catch (Exception e) {
-	    response = Response.status(Response.Status.CONFLICT).entity("ERROR: " + e.getCause() + " " + e.getMessage())
-		    .build();
+	    response = Response.status(Response.Status.CONFLICT).entity("ERROR: " + e.getCause() + " " + e.getMessage()).build();
 	}
 	return response;
     }
@@ -112,6 +111,5 @@ public class CustomerRest {
 	}
 	return response;
     }
-
     
 }

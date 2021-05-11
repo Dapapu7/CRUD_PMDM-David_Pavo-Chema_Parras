@@ -12,7 +12,7 @@ public class App {
 		
 		try {
 			Order pedido;
-			OrdersModel misPedidos = new OrdersModel();  //Creamos un objeto
+			OrdersModel misPedidos = new OrdersModel();  //Creamos un objeto de OrdersModel
 		
 			System.out.println("Conexion a la BBDD con éxito");
 			
@@ -22,13 +22,14 @@ public class App {
 				System.out.println(pedido.toString());  //Convertimos el pedido a String
 //			}
 			
-			Integer id = misPedidos.insert(pedido);
+//			Esto es el insert de los pedidos {
+			Integer id = misPedidos.insert(pedido);  //Usamos la funcion insert para insertar pedido
 			System.out.println("Acabo de insertar el pedido: "+ id);
+//			}
 			
-			//Ahora leo el cliente recien insertado y le cambio la compañia
-			pedido = misPedidos.read(id);
-			pedido.setPayment_type("hola");
-			
+//			Esto es el update de los pedidos {
+			pedido = misPedidos.read(id);  //Leemos el pedido mediante su id
+			pedido.setPayment_type("hola"); //Acutalizamos el valor de payment_type a hola
 			
 			if(misPedidos.update(pedido)) {
                 System.out.println("Pedido actualizado correctamente, veamos si es verdad: ");
@@ -37,16 +38,15 @@ public class App {
             }
             else
                 System.err.println("No he podido leer el pedido");
+//			}
 			
-			
+//			Esto es el delete de los pedidos {
 			boolean idpedido = misPedidos.delete(86);
 			System.out.println("Acabo de borrar un pedido");
 			
-			
-			
-			
 			System.out.println();
 			System.out.println();
+			
 			System.out.println("Ahora vamos a leer el cliente");
 			
 			ArrayList<Order> pedidos = misPedidos.lista("id>40", 10, 2);
