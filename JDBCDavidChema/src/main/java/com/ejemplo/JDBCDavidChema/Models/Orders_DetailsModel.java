@@ -62,6 +62,7 @@ public class Orders_DetailsModel {
 				
 		} catch (SQLException e) {
 			System.err.println("Error al leer Detalle de Pedido: " + e.getMessage());
+			return null;
 		}
 		
 		return detallesPedidos;
