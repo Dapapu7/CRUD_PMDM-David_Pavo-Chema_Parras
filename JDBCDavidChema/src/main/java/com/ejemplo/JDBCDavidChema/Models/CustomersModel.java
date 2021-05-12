@@ -13,7 +13,6 @@ import com.ejemplo.JDBCDavidChema.DBFactory.DBFactory;
 import com.ejemplo.JDBCDavidChema.Entities.Customer;
 
 
-
 public class CustomersModel {
     
     Connection conexion = null;
@@ -135,6 +134,7 @@ public class CustomersModel {
 
 	return resultado;
     }
+    
 
     public Boolean update(Customer cliente) throws SQLException  {
 	Boolean resultado = false;
