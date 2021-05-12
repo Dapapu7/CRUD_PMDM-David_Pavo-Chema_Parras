@@ -27,36 +27,48 @@ public class AppOrders_Details {
 			System.out.println("Acabo de insertar el pedido: "+ id);
 //			}
 			
-/*		Esto es el update de los pedidos {
-			pedido = misPedidos.read(id);  //Leemos el pedido mediante su id
-			pedido.setPayment_type("hola"); //Acutalizamos el valor de payment_type a hola
+//			Esto es el update de los pedidos {
+			detallesPedidos = misDetallesPedidos.read(id);  //Leemos el pedido mediante su id
+			detallesPedidos.setDiscount(100.3); //Acutalizamos el valor de payment_type a hola
 			
-			if(misPedidos.update(pedido)) {
+			if(misDetallesPedidos.update(detallesPedidos)) {
                 System.out.println("Pedido actualizado correctamente, veamos si es verdad: ");
-                pedido = misPedidos.read(id);
-                System.out.println(pedido.toString());
+                detallesPedidos = misDetallesPedidos.read(id);
+                System.out.println(detallesPedidos.toString());
             }
             else
                 System.err.println("No he podido leer el pedido");
 //			}
-			
+
 //			Esto es el delete de los pedidos {
-			boolean idpedido = misPedidos.delete(86);
+			boolean idpedido = misDetallesPedidos.delete(95);
 			System.out.println("Acabo de borrar un pedido");
-			
+//			}
+
 			System.out.println();
 			System.out.println();
 			
 			System.out.println("Ahora vamos a leer el cliente");
 			
-			ArrayList<Order> pedidos = misPedidos.lista("id>40", 10, 2);
-			listaPedidos(pedidos);
-			*/
+			ArrayList<Order_Details> detallePedido = misDetallesPedidos.lista("id>40", 10, 2);
+			listaDetallesPedidos(detallePedido);
+			
 		} catch(SQLException e) {
 			System.err.println("No se ha podido conectar a la BBDD " + e.getMessage());
 			System.exit(1);
 		}
 
+	}
+	
+	static void listaDetallesPedidos(ArrayList<Order_Details> detallePedido) {
+    	if(detallePedido == null) {
+    		System.out.println("No hay elementos en la lista");
+    		return;
+    	}
+ 
+		for(Order_Details detallesPedidos : detallePedido) {
+			System.out.println(detallesPedidos.toString());
+		}
 	}
 
 }
