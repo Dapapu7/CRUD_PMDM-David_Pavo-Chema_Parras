@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/E02RestEjemplo/webapi/clientes";
+const URL = "http://localhost:8080/JDBCDavidChema/webapi/clientes";
 const myModal = new bootstrap.Modal(document.getElementById("idModal")); // Para los mensajes de error y avisos
 
 window.onload = init;
