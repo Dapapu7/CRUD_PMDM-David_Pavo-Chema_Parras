@@ -11,7 +11,7 @@ function init() {
     .then((respuesta) => {
       if (respuesta.ok) {
         return respuesta.json();
-      } else throw new Error("Return not ok");
+      } else throw new Error("No se ha podido conectar a la API");
     })
     .then((clientes) => {
       let tblBody = document.getElementById("id_tblClientes");
@@ -39,7 +39,14 @@ function init() {
         elemento.innerHTML =
           `<button class="btn btn-link" onclick="editaCliente(${cliente.id})"><i class="bi-pencil"></i></button>` +
           `<button style="color:red;" class="btn btn-link"  onclick="borrarCliente(${cliente.id})"><i class="bi-x-circle"></i></button>`;
-        fila.appendChild(elemento);
+
+          fila.appendChild(elemento);
+
+        elemento = document.createElement("td");
+        elemento.innerHTML = 
+          `<button style="color:green; "class="btn btn-link" onclick="mostrarPedidos()"><i class="bi bi-grid-fill"></i></button>`;
+
+          fila.appendChild(elemento);
 
         tblBody.appendChild(fila);
       }
@@ -74,6 +81,10 @@ function borrarCliente(idcliente) {
     
     borrarClienteAPI(idcliente);
   });
+}
+
+function mostrarPedidos() {
+  window.location.href = "indexPedido.html";
 }
 
 function borrarClienteAPI(idcliente) {
