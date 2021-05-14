@@ -87,6 +87,10 @@ function mostrarPedidos() {
   window.location.href = "indexPedido.html";
 }
 
+function mostrarClientes() {
+  window.location.href = "indexCliente.html";
+}
+
 function borrarClienteAPI(idcliente) {
   myModal.hide();
   modalWait.show();
