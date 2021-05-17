@@ -61,6 +61,21 @@ public class OrderRest {
 		return respuesta;
 	}
 	
+	@GET
+	@Path("/cliente/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response list(@PathParam("id") Integer id) {
+		Response respuesta = Response.status(Response.Status.NOT_FOUND).entity("NO encontrado").build();
+		
+		if (orders != null) {
+			ArrayList<Order> listaPedidos = orders.lista("customer_id = "+id, null, null);
+			if (listaPedidos != null) {
+				respuesta = Response.status(Response.Status.OK).entity(listaPedidos).build();
+			}
+		}
+		return respuesta;
+	}
+	
 	
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)

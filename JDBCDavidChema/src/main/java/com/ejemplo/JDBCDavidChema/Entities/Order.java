@@ -49,6 +49,20 @@ public class Order {
 	private Boolean tax_status_id;
 	private Boolean status_id;
 	
+	
+	
+
+	public Order(Integer id, Date order_date, Integer shipper_id, String ship_address, String ship_state_province,
+			Boolean status_id) {
+		
+		this.id = id;
+		this.order_date = order_date;
+		this.shipper_id = shipper_id;
+		this.ship_address = ship_address;
+		this.ship_state_province = ship_state_province;
+		this.status_id = status_id;
+	}
+
 
 	public Order() {
 	}
