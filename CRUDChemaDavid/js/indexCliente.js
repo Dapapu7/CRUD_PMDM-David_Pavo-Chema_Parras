@@ -13,7 +13,7 @@ function init() {
     .then((respuesta) => {
       if (respuesta.ok) {
         return respuesta.json();
-      } else throw new Error("No se ha podido conectar a la API");
+      } else throw new Error("No se ha podido conectar a la API.");
     })
     .then((clientes) => {
       rellenarToDatosClientes(clientes);
@@ -76,13 +76,13 @@ function buscarCliente(e) {
   .then((respuesta) => {
     if (respuesta.ok) {
       return respuesta.json();
-    } else throw new Error("No he podido leer la petición");
+    } else throw new Error("No he podido leer la petición.");
   })
   .then((client) => {
     rellenarDatosCliente(client);
   })
   .catch((error) => {
-    muestraMsg("¡M**rd!", "¡Qué haces buscando un cliente que no existe!<br>" + error, false, "error");
+    muestraMsg("¡Me cachís!", "¡Qué haces buscando un cliente que no existe!<br>" + error, false, "error");
   });
 }
 

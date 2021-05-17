@@ -71,7 +71,7 @@ function editarPedido (idPedido) {
 function borrarPedido (idPedido) {
     muestraMsg(
         "¡Atención!",
-        `¿Estás seguro de querer borrar el pedido ${idPedido}`, true,
+        `¿Estás seguro de querer borrar el pedido ${idPedido}?`, true,
         "question",
         "De una!",
         "No por favor!!"
@@ -98,11 +98,11 @@ function borrarPedidoAPI(idPedido){
     .then((respuesta) => {
         if (respuesta.ok){
             return respuesta.json();
-        } else throw Error(`Fallo al borrar, el servidor response con ${respuesta.status}-${respuesta.statusText}`);
+        } else throw Error(`Fallo al borrar, el servidor responde con ${respuesta.status}-${respuesta.statusText}`);
     })
     .then((respuesta) => {
         modalWait.hide();
-        muestraMsg(`¡Pedido ${idPedido} Borrado!`, "Hasta luego!!", false, "success");
+        muestraMsg(`¡Pedido ${idPedido} Borrado!`, "Good bye!!", false, "success");
         document.getElementById("idMdlClose").addEventListener("click", () => {
             location.reload();
             document.getElementById("idMdlClose").removeEventListener("click");
