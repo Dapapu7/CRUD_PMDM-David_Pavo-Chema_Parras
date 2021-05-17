@@ -43,7 +43,7 @@ function rellenaCliente(idcliente) {
       document.getElementById("idSalvar").disabled = false;
     })
     .catch((error) => {
-      muestraMsg("¡M**rd!", "No he podido recupera este  Cliente " + error, false);
+      muestraMsg("¡Me cachís!", "No he podido recupera este  Cliente. " + error, false);
     });
 }
 
@@ -88,7 +88,7 @@ function salvarCliente(evt) {
       muestraMsg("Datos Actualizados", "Todo parace haber ido bien 🎉", false, "success");
     })
     .catch((error) => {
-      muestraMsg("Oops..", "No he podido actulizar la Base de Datos 🥺 " + error, false, "error");
+      muestraMsg("Jopetas ", "No he podido actulizar la Base de Datos 🥺 " + error, false, "error");
     });
 
   return false;
