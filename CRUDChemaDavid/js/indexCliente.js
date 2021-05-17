@@ -1,5 +1,5 @@
 const URL = "http://localhost:8080/JDBCDavidChema/webapi/clientes";
-const URLCliente = `http://localhost:8080/JDBCDavidChema/webapi/cliente/`
+const URLCliente = `http://localhost:8080/JDBCDavidChema/webapi/clientes/`
 
 const myModal = new bootstrap.Modal(document.getElementById("idModal")); // Para los mensajes de error y avisos
 const modalWait = new bootstrap.Modal(document.getElementById("idModalWait")); // Para los mensajes de error y avisos
@@ -71,21 +71,33 @@ function buscarCliente(e) {
   const select = document.getElementById("idSeleccionado");
   const idClienteSeleccionado = select.value;
   const peticionHTTP2 = fetch(URLCliente+idClienteSeleccionado);
-
+  
   peticionHTTP2
-  .then((respuestas) => {
-    if (respuestas.ok) {
-      return respuestas.json();
+  .then((respuesta) => {
+    if (respuesta.ok) {
+      return respuesta.json();
     } else throw new Error("No he podido leer la petición");
   })
-  .then((clientes) => {
-    console.log(clientes);
-    rellenarDatosCliente(clientes);
+  .then((client) => {
+    console.log(client);
+    rellenarDatosCliente(client);
   })
+  .catch((error) => {
+    muestraMsg("¡M**rd!", "¡No he podido recuperar el listado de clientes!<br>" + error, false, "error");
+  });
 }
 
-function rellenarDatosCliente(clientes){
+function rellenarDatosCliente(client){
   limpiarTabla();
+  let tblBody = document.getElementById("id_tblClientes");
+  console.log(client);
+  let fila = document.createElement("tr");
+  let elemento = document.createElement("td");
+  elemento.innerHTML = client.firstName;
+  fila.appendChild(elemento);
+
+  tblBody.appendChild(fila);
+  
 }
 
 function editaCliente(idcliente) {
