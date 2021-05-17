@@ -79,7 +79,6 @@ function buscarCliente(e) {
     } else throw new Error("No he podido leer la petición");
   })
   .then((client) => {
-    console.log(client);
     rellenarDatosCliente(client);
   })
   .catch((error) => {
@@ -90,8 +89,7 @@ function buscarCliente(e) {
 function rellenarDatosCliente(client){
   limpiarTabla();
   let tblBody = document.getElementById("id_tblClientes");
-  console.log(client.id);
-  console.log(client.firstName);
+
   let fila = document.createElement("tr");
   let elemento = document.createElement("td");
   elemento.innerHTML = client.id;
@@ -232,6 +230,5 @@ function muestraMsg(titulo, mensaje, okButton, tipoMsg, okMsg = "OK", closeMsg =
 }
 
 function limpiarTabla() {
-  let bodyTable = document.getElementById("id_tblClientes");
-  bodyTable?.remove();
+  let bodyTable = document.getElementById("id_tblClientes").innerHTML = " ";
 }
