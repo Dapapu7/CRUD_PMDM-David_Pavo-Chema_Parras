@@ -1,10 +1,14 @@
-const URL = "http://localhost:8080/JDBCDavidChema/webapi/pedidos";
+const URL = "http://localhost:8080/JDBCDavidChema/webapi/pedidos/cliente/";
 const myModal = new bootstrap.Modal(document.getElementById("idModal"));
 const modalWait = new bootstrap.Modal(document.getElementById("idModalWait"));
 
 window.onload = init;
 
 function init() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const idCliente = urlParams.get('idCliente')
+    console.log(idCliente);
     const peticionHTTP = fetch(URL);
 
     peticionHTTP

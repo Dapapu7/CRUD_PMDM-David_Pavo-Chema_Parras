@@ -58,7 +58,7 @@ function rellenarToDatosClientes(clientes) {
 
     elemento = document.createElement("td");
     elemento.innerHTML = 
-      `<button style="color:green; "class="btn btn-link" onclick="mostrarPedidos()"><i class="bi bi-grid-fill"></i></button>`;
+      `<button style="color:green; "class="btn btn-link" onclick="mostrarPedidos(${cliente.id})"><i class="bi bi-grid-fill"></i></button>`;
       fila.appendChild(elemento);
 
     tblBody.appendChild(fila);
@@ -82,7 +82,7 @@ function buscarCliente(e) {
     rellenarDatosCliente(client);
   })
   .catch((error) => {
-    muestraMsg("¡M**rd!", "¡No he podido recuperar el listado de clientes!<br>" + error, false, "error");
+    muestraMsg("¡M**rd!", "¡Qué haces buscando un cliente que no existe!<br>" + error, false, "error");
   });
 }
 
@@ -152,8 +152,8 @@ function borrarCliente(idcliente) {
   });
 }
 
-function mostrarPedidos() {
-  window.location.href = "indexPedido.html";
+function mostrarPedidos(idCliente) {
+  window.location.href = "indexPedido.html?idCliente="+idCliente;
 }
 
 function mostrarClientes() {
