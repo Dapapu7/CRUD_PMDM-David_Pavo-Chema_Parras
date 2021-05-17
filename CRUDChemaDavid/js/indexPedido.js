@@ -65,7 +65,7 @@ function editarPedido (idPedido) {
 function borrarPedido (idPedido) {
     muestraMsg(
         "¡Atención!",
-        `¿Estás seguro de querer borrar el pedido ${idPedido}`, true,
+        `¿Estás seguro de querer borrar el pedido ${idPedido}?`, true,
         "question",
         "De una!",
         "No por favor!!"
