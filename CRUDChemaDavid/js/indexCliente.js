@@ -90,14 +90,45 @@ function buscarCliente(e) {
 function rellenarDatosCliente(client){
   limpiarTabla();
   let tblBody = document.getElementById("id_tblClientes");
-  console.log(client);
+  console.log(client.id);
+  console.log(client.firstName);
   let fila = document.createElement("tr");
   let elemento = document.createElement("td");
+  elemento.innerHTML = client.id;
+  fila.appendChild(elemento);
+
+  elemento = document.createElement("td");
   elemento.innerHTML = client.firstName;
   fila.appendChild(elemento);
 
-  tblBody.appendChild(fila);
+  elemento = document.createElement("td");
+  elemento.innerHTML = client.lastName;
+  fila.appendChild(elemento);
+
+  elemento = document.createElement("td");
+  elemento.innerHTML = client.company;
+  fila.appendChild(elemento);
+
+  elemento = document.createElement("td");
+  elemento.innerHTML = client.businessPhone ?? "";
+  fila.appendChild(elemento);
+
+  elemento = document.createElement("td");
+  elemento.innerHTML = client.mobilePhone ?? "";
+  fila.appendChild(elemento);
+
+  elemento = document.createElement("td");
+    elemento.innerHTML =
+      `<button class="btn btn-link" onclick="editaCliente(${client.id})"><i class="bi-pencil"></i></button>` +
+      `<button style="color:red;" class="btn btn-link"  onclick="borrarCliente(${client.id})"><i class="bi-x-circle"></i></button>`;
+      fila.appendChild(elemento);
+
+    elemento = document.createElement("td");
+    elemento.innerHTML = 
+      `<button style="color:green; "class="btn btn-link" onclick="mostrarPedidos()"><i class="bi bi-grid-fill"></i></button>`;
+      fila.appendChild(elemento);
   
+  tblBody.appendChild(fila);
 }
 
 function editaCliente(idcliente) {
