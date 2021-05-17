@@ -11,7 +11,7 @@ function init() {
     .then((respuesta) => {
         if (respuesta.ok) {
             return respuesta.json();
-        } else throw new Error ("No se ha podido conectar a la API");
+        } else throw new Error("No se ha podido conectar a la API");
     })
     .then((pedidos) => {
         console.log(pedidos);
@@ -52,9 +52,6 @@ function init() {
         }
     })
 }
-
-
-
 
 
 function editarPedido (idPedido) {
