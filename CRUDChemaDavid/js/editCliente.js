@@ -129,3 +129,7 @@ function muestraMsg(titulo, mensaje, okButton, tipoMsg, okMsg = "OK", closeMsg =
 
   myModal.show();
 }
+
+function mostrarClientes(){
+  window.location.href = "indexCliente.html";
+}

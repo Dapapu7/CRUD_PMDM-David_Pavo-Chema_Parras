@@ -123,7 +123,7 @@ function rellenarDatosCliente(client){
 
     elemento = document.createElement("td");
     elemento.innerHTML = 
-      `<button style="color:green; "class="btn btn-link" onclick="mostrarPedidos()"><i class="bi bi-grid-fill"></i></button>`;
+      `<button style="color:green; "class="btn btn-link" onclick="mostrarPedidos(${client.id} )"><i class="bi bi-grid-fill"></i></button>`;
       fila.appendChild(elemento);
   
   tblBody.appendChild(fila);

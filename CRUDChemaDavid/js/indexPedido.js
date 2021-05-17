@@ -54,7 +54,13 @@ function init() {
 
             tblBody.appendChild(fila);
         }
+
+        document.getElementById("idAddPedido").addEventListener("click", addPedido);
     })
+}
+
+function addPedido() {
+    window.location.href = "editarPedido.html";
 }
 
 
