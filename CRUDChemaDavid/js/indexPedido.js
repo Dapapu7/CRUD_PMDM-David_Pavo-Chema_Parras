@@ -9,7 +9,7 @@ function init() {
     const urlParams = new URLSearchParams(queryString);
     const idCliente = urlParams.get('idCliente')
     console.log(idCliente);
-    const peticionHTTP = fetch(URL);
+    const peticionHTTP = fetch(URL+idCliente);
 
     peticionHTTP
     .then((respuesta) => {
