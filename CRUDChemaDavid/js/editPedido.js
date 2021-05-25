@@ -8,6 +8,7 @@ function init() {
         const queryStr = window.location.search.substring(1);
         const parametro = queryStr.split("=");
         idPedido = parametro[1];
+        console.log(idPedido);
 
         rellenarPedido(idPedido);
     } else {
@@ -44,7 +45,7 @@ function rellenarPedido(idPedido) {
     });
 }
 
-function salvarCliente(evt) {
+function salvarPedido(evt) {
     evt.preventDefault();
 
     let pedido = {};
@@ -54,7 +55,7 @@ function salvarCliente(evt) {
         pedido[input.name] = input.value;
     }
 
-    if (pedido.id = "Nuevo Pedido") {
+    if (pedido.id == "Nuevo Pedido") {
         delete pedido.id;
         opciones = {
             method: "POST",
@@ -65,7 +66,7 @@ function salvarCliente(evt) {
         };
     } else {
         opciones = {
-            method = "PUT",
+            method: "PUT",
             body: JSON.stringify(pedido),
             headers: {
                 "Content-Type": "application/json",
@@ -121,4 +122,8 @@ function muestraMsg(titulo, mensaje, okButton, tipoMsg, okMsg = "OK", closeMsg =
     document.getElementById("idMdlOK").style.display = okButton ? "block" : "none";
   
     myModal.show();
+  }
+
+  function mostrarClientes() {
+      window.location.href = "indexCliente.html";
   }

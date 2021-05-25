@@ -15,59 +15,60 @@
         <form class="row mt-3" name="formPedido" id="idFormPedido">
             <div class="row">
                 <div class="col-md-2">
-                    <label for="idId" class="form-label">Id Pedido:</label>
+                    <label for="idId" class="form-label">ID Pedido:</label>
                     <input type="text" readonly class="form-control" id="idId" name="id" placeholder="Nuevo Pedido" required />
+                </div>
+
+                <div class="col-md-2">
+                  <label for="idId" class="form-label">ID Cliente:</label>
+                  <input type="text" readonly class="form-control" id="idIdCliente" name="idCliente" placeholder="Nuevo Cliente" required />
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <label for="idFirstName" class="form-label">Nombre:</label>
-                    <input type="text" class="form-control" id="idFirstName" name="firstName" required />
+                    <label for="idEnvio" class="form-label">ID Envío:</label>
+                    <input type="text" class="form-control" id="idEnvio" name="envio" />
                 </div>
             
                 <div class="col-md-4">
-                    <label for="idLastName" class="form-label">Apellido:</label>
-                    <input type="text" class="form-control" id="idLastName" name="lastName" required />
+                    <label for="idNombrePedido" class="form-label">Nombre Pedido:</label>
+                    <input type="text" class="form-control" id="idNombrePedido" name="nombrePedido" required />
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
-                  <label for="idcompany" class="form-label">Compañía:</label>
-                  <input type="text" class="form-control" id="idcompany" name="company" required />
+                  <label for="idFechaPedido" class="form-label">Fecha de Pedido:</label>
+                  <input type="text" class="form-control" id="idFechaPedido" name="orderDate" placeholder="AAAA-MM-DD hh:mm:ss" required />
                 </div>
                 <div class="col-md-4">
-                  <label for="idjobTitle" class="form-label">Puesto:</label>
-                  <input type="text" class="form-control" id="idjobTitle" name="jobTitle" required />
+                  <label for="idTipoPago" class="form-label">Tipo de Pago:</label>
+                  <input type="text" class="form-control" id="idTipoPago" name="tipoPago" required />
                 </div>
                 <div class="col-md-2">
-                  <label for="idbusinessPhone" class="form-label">Teléfono:</label>
-                  <input type="text" class="form-control" id="idbusinessPhone" name="businessPhone" required />
-                </div>
-                <div class="col-md-2">
-                  <label for="idmobilePhone" class="form-label">Móvil:</label>
-                  <input type="text" class="form-control" id="idmobilePhone" name="mobilePhone" required />
+                  <label for="idEstado" class="form-label">Estado:</label>
+                  <input type="text" class="form-control" id="idEstado" name="estado" required />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <label for="idaddress" class="form-label">Dirección:</label>
-                  <input type="text" class="form-control" id="idaddress" name="address" required />
+                  <label for="idDireccion" class="form-label">Dirección:</label>
+                  <input type="text" class="form-control" id="idDireccion" name="dirección" required />
                 </div>
                 <div class="col-md-4">
-                  <label for="idcity" class="form-label">Ciudad:</label>
-                  <input type="text" class="form-control" id="idcity" name="city" required />
+                  <label for="idCiudad" class="form-label">Ciudad:</label>
+                  <input type="text" class="form-control" id="idCiudad" name="ciudad" required />
                 </div>
                 <div class="col-md-4">
-                  <label for="idstateProvince" class="form-label">Provincia:</label>
-                  <input type="text" class="form-control" id="idstateProvince" name="stateProvince" required />
+                  <label for="idProvincia" class="form-label">Provincia:</label>
+                  <input type="text" class="form-control" id="idProvincia" name="provincia" required />
                 </div>
                 <div class="col-md-4">
-                  <label for="idzipPostalCode" class="form-label">Cód. Postal:</label>
-                  <input type="text" class="form-control" id="idzipPostalCode" name="zipPostalCode" required />
+                  <label for="idCodigoPostal" class="form-label">Cód. Postal:</label>
+                  <input type="text" class="form-control" id="idCodigoPostal" name="codigoPostal" required />
                 </div>
                 <div class="col-md-4">
-                  <label for="idcountryRegion" class="form-label">País:</label>
-                  <input type="text" class="form-control" id="idcountryRegion" name="countryRegion" value="España" required />
+                  <label for="idPais" class="form-label">País:</label>
+                  <input type="text" class="form-control" id="idPais" name="pais" value="España" required />
                 </div>
               </div>
               <div class="row"></div>
@@ -81,6 +82,24 @@
                 </div>
               </div>
         </form>
+
+        <div class="modal" id="idModal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 id="idMdlTitle" class="modal-title">Mensaje</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p id="idMdlMsg">Modal body text goes here.</p>
+              </div>
+              <div class="modal-footer">
+                <button id="idMdlClose" type="button" class="btn" style="background-color: #ffc107;" data-bs-dismiss="modal" onclick="mostrarClientes()">Cerrar</button>
+                <button id="idMdlOK" type="button" class="btn btn-primary">OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <script src="js/editPedido.js"></script>

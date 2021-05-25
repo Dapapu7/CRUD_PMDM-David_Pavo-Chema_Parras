@@ -8,7 +8,6 @@ function init() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const idCliente = urlParams.get('idCliente')
-    console.log(idCliente);
     const peticionHTTP = fetch(URL+idCliente);
 
     peticionHTTP
@@ -18,7 +17,6 @@ function init() {
         } else throw new Error("No se ha podido conectar a la API");
     })
     .then((pedidos) => {
-        console.log(pedidos);
         let tblBody = document.getElementById("id_tblPedidos");
         for (const pedido of pedidos) {
             let fila = document.createElement("tr");
@@ -31,7 +29,9 @@ function init() {
             fila.appendChild(elemento);
 
             elemento = document.createElement("td");
-            elemento.innerHTML = pedido.order_date;
+            const fecha = new Date(pedido.order_date);
+            elemento.innerHTML = fecha.getDay()+"/"+(fecha.getMonth()+1)+"/"+fecha.getFullYear();
+            
             fila.appendChild(elemento);
 
             elemento = document.createElement("td");
