@@ -13,6 +13,7 @@ function init() {
         rellenarPedido(idPedido);
     } else {
         document.getElementById("idId").value = "Nuevo Pedido";
+        document.getElementById("idCliente").value = "Nuevo Cliente";
         document.getElementById("idSalvar").disabled = false;
     }
 
@@ -35,9 +36,9 @@ function rellenarPedido(idPedido) {
     })
     .then((pedido) => {
         let inputs = document.getElementsByTagName("input");
-        for(let input of inputs) {
-            input.value = pedido[input.name] ?? "";
-        }
+        for (let input of inputs) {
+        input.value = pedido[input.name] ?? "";
+      }
         document.getElementById("idSalvar").disabled = false;
     })
     .catch((error) => {
@@ -47,48 +48,50 @@ function rellenarPedido(idPedido) {
 
 function salvarPedido(evt) {
     evt.preventDefault();
-
+  
+    // Creo un array con todo los datos formulario
     let pedido = {};
-
+  
+    // Relleno un array cliente con todos los campos del formulario
     let inputs = document.getElementsByTagName("input");
-    for(let input of inputs) {
-        pedido[input.name] = input.value;
+    for (let input of inputs) {
+      pedido[input.name] = input.value;
     }
-
-    if (pedido.id == "Nuevo Pedido") {
-        delete pedido.id;
-        opciones = {
-            method: "POST",
-            body: JSON.stringify(pedido),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        };
-    } else {
-        opciones = {
-            method: "PUT",
-            body: JSON.stringify(pedido),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        };
+  
+    if (pedido.id == "Nuevo pedido") { // Añadimos cliente
+      delete pedido.id;
+      opciones = {
+        method: "POST", // Añadimos un registro a la BBDD
+        body: JSON.stringify(pedido), // Paso el array cliente a un objeto que luego puedo jsonear
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+    } else {  // Modificamos
+      opciones = {
+        method: "PUT", // Modificamos la BBDD
+        body: JSON.stringify(pedido), // Paso el array cliente a un objeto que luego puedo jsonear
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
     }
-
+  
     fetch(URL, opciones)
-    .then((respuesta) => {
-        if(respuesta.ok) {
-            return respuesta.json();
+      .then((respuesta) => {
+        if (respuesta.ok) {
+          return respuesta.json();
         } else throw new Error("Fallo al actualizar: " + respuesta);
-    })
-    .then((respuesta) => {
-        muestraMsg("Datos Actualizados", "Todo parece haber ido bien 🎉", false, "success");
-    })
-    .catch((error) => {
-        muestraMsg("Me cachís", "No se ha podido actualizar la BBDD 🥺 " + error, false, "error");
-    });
-
+      })
+      .then((respuesta) => {
+        muestraMsg("Datos Actualizados", "Todo parace haber ido bien 🎉", false, "success");
+      })
+      .catch((error) => {
+        muestraMsg("Jopetas ", "No he podido actulizar la Base de Datos 🥺 " + error, false, "error");
+      });
+  
     return false;
-}
+  }
 
 function volver() {
     window.history.back()
