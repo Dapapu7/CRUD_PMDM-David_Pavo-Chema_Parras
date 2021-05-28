@@ -83,7 +83,7 @@ function buscarCliente(e) {
     rellenarDatosCliente(client);
   })
   .catch((error) => {
-    muestraMsg("¡Me cachís!", "¡Qué haces buscando un cliente que no existe!<br>" + error, false, "error");
+    muestraMsg("¡Me cachís!", "¡Qué haces buscando un cliente que no existe pillín!<br>" + error, false, "error");
   });
 }
 
@@ -140,12 +140,12 @@ function addCliente() {
 
 function borrarCliente(idcliente) {
   muestraMsg(
-    "¡Atención!",
+    "¡Oye!",
     `¿Estas seguró de querer borrar el cliente ${idcliente}?`,
     true,
     "question",
-    "Adelante con los faroles!",
-    "Naaa, era broma..."
+    "¡Avanti a toda vela!",
+    "Naaah, era broma..."
   );
   document.getElementById("idMdlOK").addEventListener("click", () => {
     
@@ -180,7 +180,7 @@ function borrarClienteAPI(idcliente) {
     })
     .then((respuesta) => {
       modalWait.hide();
-      muestraMsg(`¡Cliente ${idcliente} Borrado!`, "¡A tomar por saco!", false, "success");
+      muestraMsg(`¡Cliente ${idcliente} Borrado!`, "¡A tomar vientos!", false, "success");
       document.getElementById('idMdlClose').addEventListener("click", () => {
         location.reload();
         document.getElementById('idMdlClose').removeEventListener("click");
@@ -190,7 +190,7 @@ function borrarClienteAPI(idcliente) {
     .catch((error) => {
       modalWait.hide();
       muestraMsg(
-        "Cliente NO borrado",
+        "¡Oh oh!, Cliente NO borrado",
         "¿Es posible que este cliente tenga algún pedido? 🤔<br>" + error,
         false,
         "error"

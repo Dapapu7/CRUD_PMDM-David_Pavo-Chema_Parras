@@ -8,7 +8,7 @@ function init() {
     .then((respuesta) => {
         if(respuesta.ok){
             return respuesta.json();
-        } else throw new Error("No se ha podido recuperar los datos de la API");
+        } else throw new Error("¡No me jorobes! No se ha podido recuperar los datos de la API");
     })
     .then((pedidos) => {
         let tblBody = document.getElementById("id_tblPedidos");

@@ -8,7 +8,7 @@ function init(){
     .then((respuesta) => {
         if(respuesta.ok){
             return respuesta.json();
-        } else throw new Error("No se ha podido conectar a la API");
+        } else throw new Error("¡Me chachís! No se ha podido conectar a la API");
     })
 
     .then((detalles) => {

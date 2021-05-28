@@ -32,7 +32,7 @@ function rellenarPedido(idPedido) {
     .then((respuesta) => {
         if (respuesta.ok) {
             return respuesta.json();
-        } else throw new Error("Return not ok");
+        } else throw new Error("Return not ok.");
     })
     .then((pedido) => {
         let inputs = document.getElementsByTagName("input");
@@ -42,7 +42,7 @@ function rellenarPedido(idPedido) {
         document.getElementById("idSalvar").disabled = false;
     })
     .catch((error) => {
-        muestraMsg("¡Jopetas!" , "No se ha podido recuperar este Pedido " + error, false);
+        muestraMsg("¡Lechugas! " , "No se ha podido recuperar este Pedido " + error, false);
     });
 }
 
@@ -81,13 +81,13 @@ function salvarPedido(evt) {
       .then((respuesta) => {
         if (respuesta.ok) {
           return respuesta.json();
-        } else throw new Error("Fallo al actualizar: " + respuesta);
+        } else throw new Error("Uy, fallo al actualizar: " + respuesta);
       })
       .then((respuesta) => {
-        muestraMsg("Datos Actualizados", "Todo parace haber ido bien 🎉", false, "success");
+        muestraMsg("Datos Actualizados", "Todo parace haber ido bien 🎉, menos mal...", false, "success");
       })
       .catch((error) => {
-        muestraMsg("Jopetas ", "No he podido actulizar la Base de Datos 🥺 " + error, false, "error");
+        muestraMsg("¡Jopelines! ", "No he podido actulizar la Base de Datos 🥺, F. " + error, false, "error");
       });
   
     return false;

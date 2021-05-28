@@ -16,7 +16,7 @@ function init() {
     .then((respuesta) => {
         if (respuesta.ok) {
             return respuesta.json();
-        } else throw new Error("No se ha podido conectar a la API");
+        } else throw new Error("¡Ups! No se ha podido conectar a la API");
     })
     .then((pedidos) => {
         let tblBody = document.getElementById("id_tblPedidos");
@@ -83,8 +83,8 @@ function borrarPedido (idPedido) {
         "¡Atención!",
         `¿Estás seguro de querer borrar el pedido ${idPedido}?`, true,
         "question",
-        "De una!",
-        "No por favor!!"
+        "¡Venga vale!",
+        "¡No por favor!"
     );
 
     document.getElementById("idMdlOK").addEventListener("click", () => {
@@ -108,7 +108,7 @@ function borrarPedidoAPI(idPedido){
     .then((respuesta) => {
         if (respuesta.ok){
             return respuesta.json();
-        } else throw Error(`Fallo al borrar, el servidor responde con ${respuesta.status}-${respuesta.statusText}`);
+        } else throw Error(`¡Ostras! fallo al borrar, el servidor responde con ${respuesta.status}-${respuesta.statusText}`);
     })
     .then((respuesta) => {
         modalWait.hide();
@@ -121,7 +121,7 @@ function borrarPedidoAPI(idPedido){
     .catch((error) => {
         modalWait.hide();
         muestraMsg(
-            "Cliente NO borrado",
+            "¡Leches! Cliente NO borrado",
             "¿Es posible que este pedido tengo algo extraño? <br>" + error, false,
             "error"
         );
