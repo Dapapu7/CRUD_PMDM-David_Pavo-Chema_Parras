@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista Productos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: black;">
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="index.html">Home Page</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="indexCliente.html">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="listaPedidos.html">Pedidos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="listaProductos.html">Productos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <div class="container shadow bg-secondary mt-5 pb-1 mb-5">
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
+      <h1 class="m-3"></h1>
+      <h1 class="p-2 bd-highlight"><b>Productos:</b></h1>
+      <h1 class="m-3"></h1>
+    </div>
+    <!-- <form onsubmit="javascript: null"> -->
+    <!-- </form> -->
+    <table class="table table-dark table-responsive table-sm table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Codigo:</th>
+          <th scope="col">Nombre:</th>
+          <th scope="col">Precio unidad:</th>
+          <th scope="col">Categoria:</th>
+          <th scope="col">Precio estandar:</th>
+        </tr>
+      </thead>
+      <tbody id="id_tblDetalles"></tbody>
+    </table>
+
+    <script src="js/listaProductos.js"></script>
+</body>
+</html>

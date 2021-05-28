@@ -77,6 +77,21 @@ public class Order_DetailsRest {
 		return respuesta;
 	}
 	
+	@GET
+	@Path("/pedido")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response list() {
+		Response respuesta = Response.status(Response.Status.NOT_FOUND).entity("NO encontrado").build();
+		
+		if (orders_details != null) {
+			ArrayList<Order_Details> listarDetallePedido = orders_details.lista(null);
+			if (listarDetallePedido != null) {
+				respuesta = Response.status(Response.Status.OK).entity(listarDetallePedido).build();
+			}
+		}
+		return respuesta;
+	}
+	
 	
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)

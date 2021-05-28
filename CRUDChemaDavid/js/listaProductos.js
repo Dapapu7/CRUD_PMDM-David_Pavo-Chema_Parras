@@ -1,22 +1,16 @@
-const URL_PRODUCTO = "http://localhost:8080/JDBCDavidChema/webapi/productos/";
-const URL_DETALLE = "http://localhost:8080/JDBCDavidChema/webapi/detallesPedidos/pedido/";
-const myModal = new bootstrap.Modal(document.getElementById("idModal"));
-const modalWait = new bootstrap.Modal(document.getElementById("idModalWait"));
+const URL_DETALLE = "http://localhost:8080/JDBCDavidChema/webapi/detallesPedidos/pedido";
 
-window.onload = init();
+window.onload = init;
 
-function init() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const idPedido = urlParams.get('idPedido');
-
-    const peticionHTTP = fetch(URL_DETALLE+idPedido);
+function init(){
+    const peticionHTTP = fetch(URL_DETALLE);
     peticionHTTP
     .then((respuesta) => {
         if(respuesta.ok){
             return respuesta.json();
         } else throw new Error("No se ha podido conectar a la API");
     })
+
     .then((detalles) => {
         let tblBody = document.getElementById("id_tblDetalles");
         for(const detalle of detalles) {
@@ -44,9 +38,5 @@ function init() {
             tblBody.appendChild(fila);
         }
     })
-}
 
-function mostrarPedido(){
-    window.history.back();
-    
 }

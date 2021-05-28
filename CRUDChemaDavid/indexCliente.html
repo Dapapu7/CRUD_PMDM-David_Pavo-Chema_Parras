@@ -37,25 +37,45 @@
       }
     </style>
   </head>
-  <body>
-    <div class="container justify-content-between">
-      
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="index.html">Home Page</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="indexCliente.html">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="listaPedidos.html">Pedidos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="listaProductos.html">Productos</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+  <!-- Navbar -->
+
+  <body style="background-color: black;">
     <div class="container shadow bg-secondary mt-5 pb-1 mb-5">
       <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
-        <h1 class="p-2 bd-highlight">Listado de clientes:</h1>
-        <h1 class="p-2 bd-highlight"><i class="bi bi-plus-circle-fill text-primary" id="idAddCliente"></i></h1>
+        <h1></h1>
+        <h1 class="p-2 bd-highlight"><b>&nbsp&nbsp&nbsp&nbsp Listado de clientes:</b></h1>
+        <h1 class="p-2 bd-highlight"><i style="color:rgb(0, 0, 194)" class="bi bi-plus-circle-fill" id="idAddCliente"></i></h1>
         
       </div>
       <!-- <form onsubmit="javascript: null"> -->
         <div class="row">
           <div class="col-md-4">
-              <label for="idSeleccionado" class="form-label">Dime el ID del cliente: </label>
+              <label for="idSeleccionado" class="form-label"><b>Dime el ID del cliente: </b></label>
               <input type="text" class="form-control mb-3 " id="idSeleccionado" name="seleccionado" placeholder="Introduce el ID del cliente porfis:" />
           </div>
         </div>
       <!-- </form> -->
-      <table class="table table-dark table-responsive table-sm" >
+      <table class="table table-dark table-responsive table-sm table-striped" >
         <thead>
           <tr>
             <th scope="col"># ID:</th>

@@ -1,5 +1,4 @@
 const URL = "http://localhost:8080/JDBCDavidChema/webapi/pedidos/cliente/";
-const URL_DETALLES = "http://localhost:8080/JDBCDavidChema/webapi/detallesPedidos/pedido/";
 const myModal = new bootstrap.Modal(document.getElementById("idModal"));
 const modalWait = new bootstrap.Modal(document.getElementById("idModalWait"));
 
@@ -78,29 +77,6 @@ function editarPedido (idPedido) {
 function mostrarDetalles(idPedido){
     window.location.href = "indexDetalle.html?idPedido="+idPedido;
 }
-
-// function rellenarDetalles(idPedido){
-//     const peticionHTTP2 = fetch(URL_DETALLES + idPedido);
-
-//     peticionHTTP2
-//     .then((respuesta) => {
-//         if(respuesta.ok){
-//             return respuesta.json();
-//         } else throw new Error("Me cachís no se ha podido conectar a la API");
-//     })
-//     .then((detalles) => {
-//         let tblBody1 = document.getElementById("id_tblPedidos");
-
-//         for(const detalle of detalles) {
-//             let fila1 = document.createElement("tr");
-//             let elemento1 = document.createElement("td");
-//             elemento1.innerHTML = detalle.product_code;
-//             fila1.appendChild(elemento1);
-//             tblBody1.appendChild(fila1);
-//         }
-        
-//     })
-// }
 
 function borrarPedido (idPedido) {
     muestraMsg(

@@ -70,6 +70,7 @@ function rellenarToDatosClientes(clientes) {
 function buscarCliente(e) {
   const select = document.getElementById("idSeleccionado");
   const idClienteSeleccionado = select.value;
+
   const peticionHTTP2 = fetch(URLCliente+idClienteSeleccionado);
   
   peticionHTTP2
