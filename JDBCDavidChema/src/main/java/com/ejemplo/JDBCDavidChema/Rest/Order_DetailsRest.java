@@ -15,6 +15,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.ejemplo.JDBCDavidChema.Entities.Order;
 import com.ejemplo.JDBCDavidChema.Entities.Order_Details;
 import com.ejemplo.JDBCDavidChema.Models.Orders_DetailsModel;
 
@@ -58,6 +59,21 @@ public class Order_DetailsRest {
 				respuesta = Response.status(Response.Status.OK).entity(detallePedidos).build();
 		}
 		
+		return respuesta;
+	}
+	
+	@GET
+	@Path("/pedido/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response list(@PathParam("id") Integer id) {
+		Response respuesta = Response.status(Response.Status.NOT_FOUND).entity("NO encontrado").build();
+		
+		if (orders_details != null) {
+			ArrayList<Order_Details> listarDetallePedido = orders_details.lista("order_id = "+id);
+			if (listarDetallePedido != null) {
+				respuesta = Response.status(Response.Status.OK).entity(listarDetallePedido).build();
+			}
+		}
 		return respuesta;
 	}
 	

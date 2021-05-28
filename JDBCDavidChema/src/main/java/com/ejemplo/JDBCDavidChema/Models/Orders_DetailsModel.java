@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import javax.sql.DataSource;
 
 import com.ejemplo.JDBCDavidChema.DBFactory.DBFactory;
-import com.ejemplo.JDBCDavidChema.Entities.Customer;
 import com.ejemplo.JDBCDavidChema.Entities.Order_Details;
 
 public class Orders_DetailsModel {
@@ -181,7 +180,7 @@ public class Orders_DetailsModel {
 		
 		String sql = "SELECT "
 				+ "`id`, "
-				+ "`order_id`,\r\n"
+				+ "`order_id`, "
 				+ "`product_id`, "
 				+ "`quantity`, "
 				+ "`unit_price`, "
@@ -224,6 +223,48 @@ public class Orders_DetailsModel {
 			return null;
 		}
 		
+		return detallesPedidos;
+	}
+	
+	
+	public ArrayList<Order_Details> lista(String filtro) {
+		ArrayList<Order_Details> detallesPedidos = new ArrayList<Order_Details>();
+		Statement statement = null;
+		
+		String sql = "SELECT "
+				+ "`order_id`, "
+				+ "`product_id`, "
+				+ "`product_code`, "
+				+ "`product_name`, "
+				+ "`unit_price`, "
+				+ "`category`, "
+				+ "`standard_cost` "
+				+ "from order_details as o "
+				+ "join products as p on  o.id=p.id";
+		
+		try {
+			if(filtro != null)
+				sql += " WHERE " + filtro;
+			
+			statement = conexion.createStatement();
+			ResultSet resultado = statement.executeQuery(sql);
+		
+			while(resultado.next()) {
+				detallesPedidos.add(new Order_Details(
+					resultado.getInt("order_id"),
+					resultado.getInt("product_id"),
+					resultado.getBigDecimal("unit_price"),
+					resultado.getString("product_code"),
+					resultado.getString("category"),
+					resultado.getBigDecimal("standard_cost"),
+					resultado.getString("product_name")
+				));
+			}
+			
+		} catch(SQLException e) {
+			System.err.println("Error al listar Detalle de Pedido: " + e.getMessage());
+			return null;
+		}
 		return detallesPedidos;
 	}
 }

@@ -170,7 +170,7 @@ public class OrdersModel {
 				+"tax_rate = ?, "
 				+"tax_status_id = ?, "
 				+"status_id = ? " 
-				+"WHERE id=?";
+				+"WHERE id = ?";
 		
 		try {
 		    ps = conexion.prepareStatement(sql);

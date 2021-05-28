@@ -1,15 +1,18 @@
 const URL = "http://localhost:8080/JDBCDavidChema/webapi/pedidos/cliente/";
+const URL_DETALLES = "http://localhost:8080/JDBCDavidChema/webapi/detallesPedidos/pedido/";
 const myModal = new bootstrap.Modal(document.getElementById("idModal"));
 const modalWait = new bootstrap.Modal(document.getElementById("idModalWait"));
+
+
 
 window.onload = init;
 
 function init() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const idCliente = urlParams.get('idCliente')
-    const peticionHTTP = fetch(URL+idCliente);
+    const idCliente = urlParams.get('idCliente');
 
+    const peticionHTTP = fetch(URL+idCliente);
     peticionHTTP
     .then((respuesta) => {
         if (respuesta.ok) {
@@ -52,9 +55,13 @@ function init() {
               `<button style="color:red;" class="btn btn-link"  onclick="borrarPedido(${pedido.id})"><i class="bi-x-circle"></i></button>`;
             fila.appendChild(elemento);
 
+            elemento = document.createElement("td");
+            elemento.innerHTML = 
+            `<button style="color:brown" class="btn btn-link"  onclick="mostrarDetalles(${pedido.id})"><i class="bi bi-cart3"></i></button>`;
+            fila.appendChild(elemento);
             tblBody.appendChild(fila);
         }
-
+        
         document.getElementById("idAddPedido").addEventListener("click", addPedido);
     })
 }
@@ -67,6 +74,33 @@ function addPedido() {
 function editarPedido (idPedido) {
     window.location.href = `editarPedido.html?idPedido=${idPedido}`;
 }
+
+function mostrarDetalles(idPedido){
+    window.location.href = "indexDetalle.html?idPedido="+idPedido;
+}
+
+// function rellenarDetalles(idPedido){
+//     const peticionHTTP2 = fetch(URL_DETALLES + idPedido);
+
+//     peticionHTTP2
+//     .then((respuesta) => {
+//         if(respuesta.ok){
+//             return respuesta.json();
+//         } else throw new Error("Me cachís no se ha podido conectar a la API");
+//     })
+//     .then((detalles) => {
+//         let tblBody1 = document.getElementById("id_tblPedidos");
+
+//         for(const detalle of detalles) {
+//             let fila1 = document.createElement("tr");
+//             let elemento1 = document.createElement("td");
+//             elemento1.innerHTML = detalle.product_code;
+//             fila1.appendChild(elemento1);
+//             tblBody1.appendChild(fila1);
+//         }
+        
+//     })
+// }
 
 function borrarPedido (idPedido) {
     muestraMsg(

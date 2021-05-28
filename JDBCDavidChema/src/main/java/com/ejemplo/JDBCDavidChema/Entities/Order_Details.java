@@ -31,6 +31,11 @@ public class Order_Details{
 	private Integer purchase_order_id;
 	private Integer inventory_id;
 	
+	private String product_code;
+	private String category;
+	private BigDecimal standard_cost;
+	private String product_name;
+	
 	
 	
 	public Order_Details() {
@@ -51,8 +56,51 @@ public class Order_Details{
 		this.purchase_order_id = purchase_order_id;
 		this.inventory_id = inventory_id;
 	}
+	
+	public Order_Details(Integer order_id, Integer product_id, BigDecimal unit_price, String product_code, String category, BigDecimal standard_cost, String product_name) {
+		this.order_id = order_id;
+		this.product_id = product_id;
+		this.unit_price = unit_price;
+		this.product_code = product_code;
+		this.category = category;
+		this.standard_cost = standard_cost;
+		this.product_name = product_name;
+		
+	}
 
 	
+	public String getProduct_name() {
+		return product_name;
+	}
+
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
+	}
+
+	public String getProduct_code() {
+		return product_code;
+	}
+
+	public void setProduct_code(String product_code) {
+		this.product_code = product_code;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public BigDecimal getStandard_cost() {
+		return standard_cost;
+	}
+
+	public void setStandard_cost(BigDecimal standard_cost) {
+		this.standard_cost = standard_cost;
+	}
+
 	public Integer getId() {
 		return id;
 	}
