@@ -180,7 +180,7 @@ public class OrdersModel {
 			ps.setDate(4, pedido.getShipped_date());
 			ps.setInt(5, pedido.getShipper_id());
 			ps.setString(6, pedido.getShip_name());
-			ps.setDate(7, pedido.getShipped_date());
+			ps.setString(7, pedido.getShip_address());
 			ps.setString(8, pedido.getShip_city());
 			ps.setString(9, pedido.getShip_state_province());
 			ps.setString(10, pedido.getShip_zip_postal_code());

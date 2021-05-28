@@ -19,56 +19,71 @@
                     <input type="text" readonly class="form-control" id="idId" name="id" required />
                 </div>
 
-                <div class="col-md-2">
-                  <label for="idCliente" class="form-label">ID Cliente:</label>
-                  <input type="text" readonly class="form-control" id="idCliente" name="customer_id" placeholder="Nuevo Pedido" required />
+               <div class="col-md-2"> 
+                  <label for="idcustomer_id" class="form-label">ID Cliente:</label>
+                  <input type="text" readonly class="form-control" id="idcustomer_id" name="customer_id" required />
                 </div>
+
+                <div class="col-md-2">
+                  <label for="idemployee_id" class="form-label">ID Empleado:</label>
+                  <input type="text" class="form-control" id="idemployee_id" name="employee_id" required />
+              </div>
+
+              <div class="col-md-2">
+                <label for="idtax_status_id" class="form-label">ID Estado Tasa:</label>
+                <input type="text" class="form-control" id="idtax_status_id" name="tax_status_id" required />
+            </div>
+
+            <div class="col-md-2">
+              <label for="idtax_rate" class="form-label">Ratio de taxas:</label>
+              <input type="text" class="form-control" id="idtax_rate" name="tax_rate" required />
+          </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <label for="idEnvio" class="form-label">ID Envío:</label>
-                    <input type="text" class="form-control" id="idEnvio" name="shipper_id" />
+                    <label for="idshipper_id" class="form-label">ID Envío:</label>
+                    <input type="text" class="form-control" id="idshipper_id" name="shipper_id" />
                 </div>
             
                 <div class="col-md-4">
-                    <label for="idNombrePedido" class="form-label">Nombre Pedido:</label>
-                    <input type="text" class="form-control" id="idNombrePedido" name="ship_name" required />
+                    <label for="idship_name" class="form-label">Nombre Pedido:</label>
+                    <input type="text" class="form-control" id="idship_name" name="ship_name" required />
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
-                  <label for="idFechaPedido" class="form-label">Fecha de Pedido:</label>
-                  <input type="text" class="form-control" id="idFechaPedido" name="order_date" placeholder="AAAA-MM-DD hh:mm:ss" required />
+                  <label for="idorder_date" class="form-label">Fecha de Pedido:</label>
+                  <input type="text" class="form-control" id="idorder_date" name="order_date" placeholder="AAAA-MM-DD hh:mm:ss" required />
                 </div>
                 <div class="col-md-4">
-                  <label for="idTipoPago" class="form-label">Tipo de Pago:</label>
-                  <input type="text" class="form-control" id="idTipoPago" name="payment_type" required />
+                  <label for="idpayment_type" class="form-label">Tipo de Pago:</label>
+                  <input type="text" class="form-control" id="idpayment_type" name="payment_type" required />
                 </div>
                 <div class="col-md-2">
-                  <label for="idEstado" class="form-label">Estado:</label>
-                  <input type="text" class="form-control" id="idEstado" name="status_id" required />
+                  <label for="idstatus_id" class="form-label">Estado:</label>
+                  <input type="text" class="form-control" id="idstatus_id" name="status_id" required />
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <label for="idDireccion" class="form-label">Dirección:</label>
-                  <input type="text" class="form-control" id="idDireccion" name="ship_address" required />
+                  <label for="idship_address" class="form-label">Dirección:</label>
+                  <input type="text" class="form-control" id="idship_address" name="ship_address" required />
                 </div>
                 <div class="col-md-4">
-                  <label for="idCiudad" class="form-label">Ciudad:</label>
-                  <input type="text" class="form-control" id="idCiudad" name="ship_city" required />
+                  <label for="idship_city" class="form-label">Ciudad:</label>
+                  <input type="text" class="form-control" id="idship_city" name="ship_city" required />
                 </div>
                 <div class="col-md-4">
-                  <label for="idProvincia" class="form-label">Provincia:</label>
-                  <input type="text" class="form-control" id="idProvincia" name="ship_state_province" required />
+                  <label for="idship_state_province" class="form-label">Provincia:</label>
+                  <input type="text" class="form-control" id="idship_state_province" name="ship_state_province" required />
                 </div>
                 <div class="col-md-4">
-                  <label for="idCodigoPostal" class="form-label">Cód. Postal:</label>
-                  <input type="text" class="form-control" id="idCodigoPostal" name="ship_zip_postal_code" required />
+                  <label for="idship_zip_postal_code" class="form-label">Cód. Postal:</label>
+                  <input type="text" class="form-control" id="idship_zip_postal_code" name="ship_zip_postal_code" required />
                 </div>
                 <div class="col-md-4">
-                  <label for="idPais" class="form-label">País:</label>
-                  <input type="text" class="form-control" id="idPais" name="ship_country_region" value="España" required />
+                  <label for="idship_country_region" class="form-label">País:</label>
+                  <input type="text" class="form-control" id="idship_country_region" name="ship_country_region" value="España" required />
                 </div>
               </div>
               <div class="row"></div>

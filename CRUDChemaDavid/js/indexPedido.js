@@ -33,7 +33,10 @@ function init() {
             elemento = document.createElement("td");
             const fecha = new Date(pedido.order_date);
             elemento.innerHTML = fecha.getDay()+"/"+(fecha.getMonth()+1)+"/"+fecha.getFullYear();
-            
+            fila.appendChild(elemento);
+
+            elemento = document.createElement("td");
+            elemento.innerHTML = pedido.ship_name;
             fila.appendChild(elemento);
 
             elemento = document.createElement("td");
@@ -59,6 +62,8 @@ function init() {
             `<button style="color:orange" class="btn btn-link"  onclick="mostrarDetalles(${pedido.id})"><i class="bi bi-cart3"></i></button>`;
             fila.appendChild(elemento);
             tblBody.appendChild(fila);
+
+
         }
         
         document.getElementById("idAddPedido").addEventListener("click", addPedido);
