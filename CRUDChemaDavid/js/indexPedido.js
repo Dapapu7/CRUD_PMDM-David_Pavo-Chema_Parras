@@ -57,7 +57,7 @@ function init() {
 
             elemento = document.createElement("td");
             elemento.innerHTML = 
-            `<button style="color:brown" class="btn btn-link"  onclick="mostrarDetalles(${pedido.id})"><i class="bi bi-cart3"></i></button>`;
+            `<button style="color:orange" class="btn btn-link"  onclick="mostrarDetalles(${pedido.id})"><i class="bi bi-cart3"></i></button>`;
             fila.appendChild(elemento);
             tblBody.appendChild(fila);
         }
