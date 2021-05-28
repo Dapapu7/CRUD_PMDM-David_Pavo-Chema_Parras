@@ -46,19 +46,22 @@
     </style>
   </head>
   <body>
-    <h1 class="m-3">
-      <i class="bi bi-arrow-left-circle-fill" style="color: red;" onclick="mostrarClientes()"></i>
-    </h1>
     
-    <div class="container">
+     
+    
+    
+    <div class="container shadow bg-secondary mt-5 pb-1">
       <div class="d-flex flex-row bd-hightlight mb-3 justify-content-between">
+        <h1 class="m-3 justify-content-between">
+        <i class="bi bi-arrow-left-circle-fill" style="color: red;" onclick="mostrarClientes()"></i></h1>
         <h1 class="p-2 bd-highlight">Listado de Pedidos del Cliente:</h1>
         <h1 class="p-2 bd-highlight">
           <i class="bi bi-plus-circle-fill text-primary" id="idAddPedido"></i>
+          
         </h1>
       </div>
 
-      <table class="table table-responsive table-sm">
+      <table class="table table-dark table-responsive table-sm">
         <thead>
           <tr>
             <th scope="col"># ID:</th>
