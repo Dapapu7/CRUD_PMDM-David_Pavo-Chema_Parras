@@ -22,7 +22,7 @@ function init() {
       document.getElementById("idAddCliente").addEventListener("click", addCliente);
     })
     .catch((error) => {
-      muestraMsg("¡M**rd!", "¡No he podido recuperar el listado de clientes!<br>" + error, false, "error");
+      muestraMsg("¡M**rda!", "¡No he podido recuperar el listado de clientes!<br>" + error, false, "error");
     });
 }
 
