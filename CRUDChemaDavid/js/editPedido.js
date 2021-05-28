@@ -12,7 +12,7 @@ function init() {
         rellenarPedido(idPedido);
     } else {
         document.getElementById("idId").value = "Nuevo Pedido";
-        document.getElementById("idcustomer_id").value = idCliente;
+        // document.getElementById("idcustomer_id").value = "Nuevo Cliente";
         // document.getElementById("idemployee_id").value = "Nuevo Trabajador";
         document.getElementById("idSalvar").disabled = false;
     }
