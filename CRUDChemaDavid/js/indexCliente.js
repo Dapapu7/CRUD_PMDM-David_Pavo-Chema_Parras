@@ -71,6 +71,9 @@ function buscarCliente(e) {
   const select = document.getElementById("idSeleccionado");
   const idClienteSeleccionado = select.value;
 
+  if(idClienteSeleccionado == "")
+    window.location.href = "indexCliente.html";
+
   const peticionHTTP2 = fetch(URLCliente+idClienteSeleccionado);
   
   peticionHTTP2

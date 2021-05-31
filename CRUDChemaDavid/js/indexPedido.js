@@ -63,15 +63,16 @@ function init() {
             fila.appendChild(elemento);
             tblBody.appendChild(fila);
 
-
         }
         
         document.getElementById("idAddPedido").addEventListener("click", addPedido);
+        
+        
     })
 }
 
 function addPedido() {
-    window.location.href = "editarPedido.html";
+    window.location.href = `editarPedido.html`;
 }
 
 
@@ -95,6 +96,9 @@ function borrarPedido (idPedido) {
     document.getElementById("idMdlOK").addEventListener("click", () => {
         borrarPedidoAPI(idPedido);
     });
+    document.getElementById("idMdlClose").addEventListener("click", () =>{
+        location.reload();
+    })
 }
 
 function mostrarClientes() {
