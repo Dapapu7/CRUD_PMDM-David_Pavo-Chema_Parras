@@ -91,22 +91,12 @@ public class OrdersModel {
 				+ "`employee_id`, "
 				+ "`customer_id`, "
 				+ "`order_date`, "
-				+ "`shipped_date`, "
 				+ "`shipper_id`, "
 				+ "`ship_name`, "
 				+ "`ship_address`, "
-				+ "`ship_city`, "
 				+ "`ship_state_province`, "
 				+ "`ship_zip_postal_code`, "
-				+ "`ship_country_region`, "
-				+ "`shipping_fee`, "
-				+ "`taxes`, "
-				+ "`payment_type`, "
-				+ "`paid_date`, "
-				+ "`notes`, "
-				+ "`tax_rate`, "
-				+ "`tax_status_id`, "
-				+ "`status_id`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				+ "`status_id`) VALUES (?,?,?,?,?,?,?,?,?)";
 		
 		try {
 			ps = conexion.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -114,22 +104,12 @@ public class OrdersModel {
 			ps.setInt(1, pedido.getEmployee_id());
 			ps.setInt(2, pedido.getCustomer_id());
 			ps.setDate(3, pedido.getOrder_date());
-			ps.setDate(4, pedido.getShipped_date());
-			ps.setInt(5, pedido.getShipper_id());
-			ps.setString(6, pedido.getShip_name());
-			ps.setString(7, pedido.getShip_address());
-			ps.setString(8, pedido.getShip_city());
-			ps.setString(9, pedido.getShip_state_province());
-			ps.setString(10, pedido.getShip_zip_postal_code());
-			ps.setString(11, pedido.getShip_country_region());
-			ps.setBigDecimal(12, pedido.getShipping_fee());
-			ps.setBigDecimal(13, pedido.getTaxes());
-			ps.setString(14, pedido.getPayment_type());
-			ps.setDate(15, pedido.getPaid_date());
-			ps.setString(16, pedido.getNotes());
-			ps.setDouble(17, pedido.getTax_rate());
-			ps.setBoolean(18, pedido.getTax_status_id());
-			ps.setBoolean(19, pedido.getStatus_id());
+			ps.setInt(4, pedido.getShipper_id());
+			ps.setString(5, pedido.getShip_name());
+			ps.setString(6, pedido.getShip_address());
+			ps.setString(7, pedido.getShip_state_province());
+			ps.setString(8, pedido.getShip_zip_postal_code());
+			ps.setBoolean(9, pedido.getStatus_id());
 			
 			if (ps.executeUpdate() > 0) {
 				ResultSet rs = ps.getGeneratedKeys();
@@ -154,21 +134,11 @@ public class OrdersModel {
 				+"employee_id = ?, "
 				+"customer_id = ?, "
 				+"order_date = ?, "
-				+"shipped_date = ?, "
 				+"shipper_id = ?, "
 				+"ship_name = ?, "
 				+"ship_address = ?, "
-				+"ship_city = ?, "
 				+"ship_state_province = ?, "
 				+"ship_zip_postal_code = ?, "
-				+"ship_country_region = ?, "
-				+"shipping_fee = ?, "
-				+"taxes = ?, "
-				+"payment_type = ?, "
-				+"paid_date = ?, "
-				+"notes = ?, "
-				+"tax_rate = ?, "
-				+"tax_status_id = ?, "
 				+"status_id = ? " 
 				+"WHERE id = ?";
 		
@@ -177,23 +147,13 @@ public class OrdersModel {
 		    ps.setInt(1, pedido.getEmployee_id());
 			ps.setInt(2, pedido.getCustomer_id());
 			ps.setDate(3, pedido.getOrder_date());
-			ps.setDate(4, pedido.getShipped_date());
-			ps.setInt(5, pedido.getShipper_id());
-			ps.setString(6, pedido.getShip_name());
-			ps.setString(7, pedido.getShip_address());
-			ps.setString(8, pedido.getShip_city());
-			ps.setString(9, pedido.getShip_state_province());
-			ps.setString(10, pedido.getShip_zip_postal_code());
-			ps.setString(11, pedido.getShip_country_region());
-			ps.setBigDecimal(12, pedido.getShipping_fee());
-			ps.setBigDecimal(13, pedido.getTaxes());
-			ps.setString(14, pedido.getPayment_type());
-			ps.setDate(15, pedido.getPaid_date());
-			ps.setString(16, pedido.getNotes());
-			ps.setDouble(17, pedido.getTax_rate());
-			ps.setBoolean(18, pedido.getTax_status_id());
-			ps.setBoolean(19, pedido.getStatus_id());
-			ps.setInt(20, pedido.getId());
+			ps.setInt(4, pedido.getShipper_id());
+			ps.setString(5, pedido.getShip_name());
+			ps.setString(6, pedido.getShip_address());
+			ps.setString(7, pedido.getShip_state_province());
+			ps.setString(8, pedido.getShip_zip_postal_code());
+			ps.setBoolean(9, pedido.getStatus_id());
+			ps.setInt(10, pedido.getId());
 			
 		    resultado = (ps.executeUpdate() > 0);
 

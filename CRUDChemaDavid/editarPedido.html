@@ -29,16 +29,6 @@
                   <label for="idemployee_id" class="form-label">ID Empleado:</label>
                   <input type="text" class="form-control" id="idemployee_id" name="employee_id" required />
               </div>
-
-              <div class="col-md-2">
-                <label for="idtax_status_id" class="form-label">ID Estado Tasa:</label>
-                <input type="text" class="form-control" id="idtax_status_id" name="tax_status_id" required />
-            </div>
-
-            <div class="col-md-2">
-              <label for="idtax_rate" class="form-label">Ratio de taxas:</label>
-              <input type="text" class="form-control" id="idtax_rate" name="tax_rate" required />
-          </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
@@ -54,11 +44,7 @@
             <div class="row">
                 <div class="col-md-4">
                   <label for="idorder_date" class="form-label">Fecha de Pedido:</label>
-                  <input type="text" class="form-control" id="idorder_date" name="order_date" placeholder="AAAA-MM-DD hh:mm:ss" required />
-                </div>
-                <div class="col-md-4">
-                  <label for="idpayment_type" class="form-label">Tipo de Pago:</label>
-                  <input type="text" class="form-control" id="idpayment_type" name="payment_type" required />
+                  <input type="date" class="form-control" id="idorder_date" name="order_date" required />
                 </div>
                 <div class="col-md-2">
                   <label for="idstatus_id" class="form-label">Estado:</label>
@@ -71,20 +57,12 @@
                   <input type="text" class="form-control" id="idship_address" name="ship_address" required />
                 </div>
                 <div class="col-md-4">
-                  <label for="idship_city" class="form-label">Ciudad:</label>
-                  <input type="text" class="form-control" id="idship_city" name="ship_city" required />
-                </div>
-                <div class="col-md-4">
                   <label for="idship_state_province" class="form-label">Provincia:</label>
                   <input type="text" class="form-control" id="idship_state_province" name="ship_state_province" required />
                 </div>
                 <div class="col-md-4">
                   <label for="idship_zip_postal_code" class="form-label">Cód. Postal:</label>
                   <input type="text" class="form-control" id="idship_zip_postal_code" name="ship_zip_postal_code" required />
-                </div>
-                <div class="col-md-4">
-                  <label for="idship_country_region" class="form-label">País:</label>
-                  <input type="text" class="form-control" id="idship_country_region" name="ship_country_region" value="España" required />
                 </div>
               </div>
               <div class="row"></div>
@@ -98,6 +76,23 @@
                 </div>
               </div>
         </form>
+
+      </h1>
+      <h1 class="p-2 bd-highlight"><b>Listado de Productos:</b></h1>
+      <h1 class="m-3"> </h1>
+      <table class="table table-dark table-responsive table-sm table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Código:</th>
+            <th scope="col">Nombre:</th>
+            <th scope="col">Precio unidad:</th>
+            <th scope="col">Categoría:</th>
+            <th scope="col">Precio estándar:</th>
+          </tr>
+        </thead>
+        <tbody id="id_tblDetalles"></tbody>
+      </table>
+    </div>
 
         <div class="modal" id="idModal" tabindex="-1">
           <div class="modal-dialog">
@@ -119,5 +114,6 @@
     </div>
 
     <script src="js/editPedido.js"></script>
+    <script src="js/indexDetalle.js"></script>
 </body>
 </html>

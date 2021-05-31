@@ -57,10 +57,6 @@ function init() {
               `<button style="color:red;" class="btn btn-link"  onclick="borrarPedido(${pedido.id})"><i class="bi-x-circle"></i></button>`;
             fila.appendChild(elemento);
 
-            elemento = document.createElement("td");
-            elemento.innerHTML = 
-            `<button style="color:orange" class="btn btn-link"  onclick="mostrarDetalles(${pedido.id})"><i class="bi bi-cart3"></i></button>`;
-            fila.appendChild(elemento);
             tblBody.appendChild(fila);
 
         }
