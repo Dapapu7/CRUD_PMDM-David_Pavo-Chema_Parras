@@ -25,7 +25,7 @@ function init() {
     })
 
     document.getElementById("idFormPedido").addEventListener("submit", salvarPedido);
-
+    
     const peticionHTTP = fetch(URL_DETALLE+idPedido);
     peticionHTTP
     .then((respuesta) => {
