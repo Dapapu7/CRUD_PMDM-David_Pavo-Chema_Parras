@@ -6,6 +6,7 @@ const myModal = new bootstrap.Modal(document.getElementById("idModal"));
 window.onload = init;
 
 function init() {
+  let idPedido;
     if(window.location.search != "") {
         const queryStr = window.location.search.substring(1);
         const parametro = queryStr.split("=");
@@ -94,17 +95,8 @@ function salvarPedido(evt) {
   for (const input of inputs) {
     pedido[input.name] = input.value;
   }
-
-  if (pedido.id == "Nuevo Pedido") { // Añadimos cliente
-    delete pedido.id;
-    opciones = {
-      method: "POST", // Añadimos un registro a la BBDD
-      body: JSON.stringify(pedido), // Paso el array cliente a un objeto que luego puedo jsonear
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-  } else {  // Modificamos
+    
+   if(pedido.id != "Nuevo Pedido") {  // Modificamos
     opciones = {
       method: "PUT", // Modificamos la BBDD
       body: JSON.stringify(pedido), // Paso el array cliente a un objeto que luego puedo jsonear

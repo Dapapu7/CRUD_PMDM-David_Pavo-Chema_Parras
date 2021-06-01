@@ -61,15 +61,17 @@ function init() {
 
         }
         
-        document.getElementById("idAddPedido").addEventListener("click", addPedido);
-        
-        
+        document.getElementById("idAddPedido").addEventListener("click", () => {
+            url = `crearPedido.html?idCliente=${idCliente}`;
+            window.location.href = url;
+            console.log(url);
+        });
     })
 }
 
-function addPedido() {
-    window.location.href = `editarPedido.html`;
-}
+// function addPedido() {
+//     window.location.href = `editarPedido.html`;
+// }
 
 
 function editarPedido (idPedido) {
