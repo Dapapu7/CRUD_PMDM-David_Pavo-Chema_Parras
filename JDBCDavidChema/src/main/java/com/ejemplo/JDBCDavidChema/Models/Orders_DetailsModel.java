@@ -238,9 +238,10 @@ public class Orders_DetailsModel {
 				+ "`product_name`, "
 				+ "`unit_price`, "
 				+ "`category`, "
+				+ "`quantity`, "
 				+ "`standard_cost` "
 				+ "from order_details as o "
-				+ "join products as p on  o.id=p.id";
+				+ "join products as p on  o.product_id=p.id";
 		
 		try {
 			if(filtro != null)
@@ -256,6 +257,7 @@ public class Orders_DetailsModel {
 					resultado.getBigDecimal("unit_price"),
 					resultado.getString("product_code"),
 					resultado.getString("category"),
+					resultado.getBigDecimal("quantity"),
 					resultado.getBigDecimal("standard_cost"),
 					resultado.getString("product_name")
 				));

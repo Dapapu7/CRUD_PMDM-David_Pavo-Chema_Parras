@@ -60,19 +60,72 @@ function init() {
             fila.appendChild(elemento);
 
             elemento = document.createElement("td");
+            elemento.innerHTML = detalle.quantity;
+            fila.appendChild(elemento);
+
+            elemento = document.createElement("td");
             elemento.innerHTML = 
             `<button style="color:red;" class="btn btn-link"  onclick="borrarProducto(${detalle.product_id})"><i class="bi-x-circle"></i></button>`;
             fila.appendChild(elemento);
 
             tblBody.appendChild(fila);
-
-            document.getElementById("idAddProducto").addEventListener("click", addProducto);
         }
     })
+
+    const peticionHTTP5 = fetch(URL_DETALLE);
+    peticionHTTP5
+    .then((respuesta) => {
+        if(respuesta.ok){
+            return respuesta.json();
+        } else throw new Error("¡Me chachís! No se ha podido conectar a la API");
+    })
+
+    .then((detalles) => {
+        let tblBody = document.getElementById("id_tblDetalle");
+        for(const detalle of detalles) {
+            let fila = document.createElement("tr");
+            let elemento = document.createElement("td");
+            elemento.innerHTML = detalle.product_code;
+            fila.appendChild(elemento);
+
+            elemento = document.createElement("td");
+            elemento.innerHTML = detalle.product_name;
+            fila.appendChild(elemento);
+
+            elemento = document.createElement("td");
+            elemento.innerHTML = detalle.unit_price;
+            fila.appendChild(elemento);
+
+            elemento = document.createElement("td");
+            elemento.innerHTML = detalle.category;
+            fila.appendChild(elemento);
+
+            elemento = document.createElement("td");
+            elemento.innerHTML = detalle.standard_cost;
+            fila.appendChild(elemento);
+
+            elemento = document.createElement("td");
+            let input = document.createElement("input");
+            input.setAttribute('type', 'number');
+            input.setAttribute('id', 'idquantity');
+            input.setAttribute('name', 'quantity');
+            input.setAttribute('min', '1');
+            elemento.appendChild(input);
+            fila.appendChild(elemento);elemento = document.createElement("td");
+
+            elemento = document.createElement("td");
+            elemento.innerHTML = 
+                `<button style="color:yellow;" onclick="añadirProducto(${detalle.product_id})" class="btn btn-link"><i class="bi bi-plus-square-fill"></i></button>`;
+            fila.appendChild(elemento);
+
+            tblBody.appendChild(fila);
+        }
+    })
+
 }
 
-function editaProducto(idProducto) {
-  window.location.href = `editarProducto.html?idDetalle=${idProducto}`;
+function añadirProducto(idProducto){
+  
 }
 
 function borrarProducto(idProducto){
@@ -122,10 +175,6 @@ function borrarProductoAPI(idProducto) {
             "error"
         );
   });
-}
-
-function addProducto() {
-  window.location.href = "editarProducto.html";
 }
 
 function rellenarPedido(idPedido) {

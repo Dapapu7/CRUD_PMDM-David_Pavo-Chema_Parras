@@ -58,12 +58,13 @@ public class Order_Details{
 		this.inventory_id = inventory_id;
 	}
 	
-	public Order_Details(Integer order_id, Integer product_id, BigDecimal unit_price, String product_code, String category, BigDecimal standard_cost, String product_name) {
+	public Order_Details(Integer order_id, Integer product_id, BigDecimal unit_price, String product_code, String category, BigDecimal quantity, BigDecimal standard_cost, String product_name) {
 		this.order_id = order_id;
 		this.product_id = product_id;
 		this.unit_price = unit_price;
 		this.product_code = product_code;
 		this.category = category;
+		this.quantity = quantity;
 		this.standard_cost = standard_cost;
 		this.product_name = product_name;
 		
