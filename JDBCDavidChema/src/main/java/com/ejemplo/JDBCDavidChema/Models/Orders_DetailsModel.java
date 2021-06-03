@@ -1,4 +1,4 @@
-package com.ejemplo.JDBCDavidChema.Models;
+	package com.ejemplo.JDBCDavidChema.Models;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -137,7 +137,7 @@ public class Orders_DetailsModel {
 		Boolean resultado = false;
 		PreparedStatement ps = null;
 		
-		String sql = "UPDATE order_details SET\r\n"
+		String sql = "UPDATE order_details SET "
 				+ "order_id = ?, "
 				+ "product_id = ?, "
 				+ "quantity = ?, "

@@ -58,9 +58,23 @@ function init() {
             elemento.innerHTML = detalle.standard_cost + " €";
             fila.appendChild(elemento);
 
+            elemento = document.createElement("td");
+            elemento.innerHTML = 
+            `<button class="btn btn-link" onclick="editaProducto(${detalle.product_id})"><i class="bi-pencil"></i></button>` +
+            `<button style="color:red;" class="btn btn-link"  onclick="borrarProducto(${detalle.product_id})"><i class="bi-x-circle"></i></button>`;
+            fila.appendChild(elemento);
+
             tblBody.appendChild(fila);
         }
     })
+}
+
+function editaProducto(idProducto) {
+  window.location.href = `editarProducto.html?idDetalle=${idProducto}`;
+}
+
+function addProducto() {
+  window.location.href = "editarProducto.html";
 }
 
 function rellenarPedido(idPedido) {
