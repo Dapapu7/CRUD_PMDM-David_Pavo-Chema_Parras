@@ -116,7 +116,7 @@ public class Orders_DetailsModel {
 		Boolean resultado = false;
 		PreparedStatement ps = null;
 		
-		String sql = "DELETE FROM order_details where id = ?";
+		String sql = "DELETE FROM order_details where product_id = ?";
 		
 		try {
 			

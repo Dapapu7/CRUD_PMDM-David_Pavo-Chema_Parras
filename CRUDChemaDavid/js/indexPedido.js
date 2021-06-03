@@ -115,7 +115,7 @@ function borrarPedidoAPI(idPedido){
     .then((respuesta) => {
         if (respuesta.ok){
             return respuesta.json();
-        } else throw Error(`¡Ostras! fallo al borrar, el servidor responde con ${respuesta.status}-${respuesta.statusText}`);
+        } else throw Error(`¡Ostras! Fallo al borrar, el servidor responde con ${respuesta.status}-${respuesta.statusText}`);
     })
     .then((respuesta) => {
         modalWait.hide();

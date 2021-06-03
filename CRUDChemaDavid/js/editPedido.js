@@ -1,4 +1,5 @@
 const URL = "http://localhost:8080/JDBCDavidChema/webapi/pedidos";
+const URL_BORRAR = "http://localhost:8080/JDBCDavidChema/webapi/detallesPedidos";
 const URL_PRODUCTO = "http://localhost:8080/JDBCDavidChema/webapi/productos/";
 const URL_DETALLE = "http://localhost:8080/JDBCDavidChema/webapi/detallesPedidos/pedido/";
 const myModal = new bootstrap.Modal(document.getElementById("idModal"));
@@ -60,17 +61,67 @@ function init() {
 
             elemento = document.createElement("td");
             elemento.innerHTML = 
-            `<button class="btn btn-link" onclick="editaProducto(${detalle.product_id})"><i class="bi-pencil"></i></button>` +
             `<button style="color:red;" class="btn btn-link"  onclick="borrarProducto(${detalle.product_id})"><i class="bi-x-circle"></i></button>`;
             fila.appendChild(elemento);
 
             tblBody.appendChild(fila);
+
+            document.getElementById("idAddProducto").addEventListener("click", addProducto);
         }
     })
 }
 
 function editaProducto(idProducto) {
   window.location.href = `editarProducto.html?idDetalle=${idProducto}`;
+}
+
+function borrarProducto(idProducto){
+  muestraMsg(
+    "¡Oye, Oye!",
+    `¿Estás seguro de querer borrar el producto ${idProducto}`, true,
+    "question",
+    "¡Si, pliss!",
+    "¡No, no, no!"
+  );
+
+  document.getElementById("idMdlOK").addEventListener("click", () => {
+    borrarProductoAPI(idProducto);
+  });
+
+  document.getElementById("idMdlClose").addEventListener("click", () => {
+    location.reload();
+  })
+}
+
+function borrarProductoAPI(idProducto) {
+  myModal.hide();
+
+  opciones = {
+    method: "DELETE",
+  };
+
+  fetch(URL_BORRAR + "/" + idProducto, opciones)
+  .then((respuesta) => {
+    if(respuesta.ok){
+      return respuesta.json();
+    } else throw new Error(`¡Jopelines! Fallo al borrar, el servidor response con ${respuesta.status}-${respuesta.statusText} `);
+  })
+  .then((respuesta) => {
+    muestraMsg(`!Producto ${idProducto} Borrado, de locos!`, "Good bye!!", false, "success");
+        document.getElementById("idMdlClose").addEventListener("click", () => {
+            location.reload();
+            document.getElementById("idMdlClose").removeEventListener("click", () => {
+
+            });
+        })
+  })
+  .catch((error) => {
+        muestraMsg(
+            "¡Leches! Producto NO borrado",
+            "¿Es posible que este pedido tengo algo extraño? <br>" + error, false,
+            "error"
+        );
+  });
 }
 
 function addProducto() {
