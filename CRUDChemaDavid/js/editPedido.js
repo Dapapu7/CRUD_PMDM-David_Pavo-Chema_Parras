@@ -340,7 +340,7 @@ function añadirProducto(idproducto) {
         unit_price: producto.standard_cost,
         category:producto.category,
         standard_cost: producto.standard_cost,
-        quantity:producto.quantity
+        quantity:cantidad
 
       });
       pintaDetallePedido(detallesPedido);
