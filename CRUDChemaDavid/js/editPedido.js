@@ -100,10 +100,10 @@ function init() {
     });
 }
 
-function borrarProducto(idProducto) {
+function borrarProducto(productCode) {
   muestraMsg(
     "¡Oye, Oye!",
-    `¿Estás seguro de querer borrar el producto ${idProducto}`,
+    `¿Estás seguro de querer borrar el producto ${productCode}`,
     true,
     "question",
     "¡Si, pliss!",
@@ -111,7 +111,7 @@ function borrarProducto(idProducto) {
   );
 
   document.getElementById("idMdlOK").addEventListener("click", () => {
-    borrarProductoAPI(idProducto);
+    borrarProductoAPI(productCode);
   });
 
   document.getElementById("idMdlClose").addEventListener("click", () => {
@@ -119,14 +119,14 @@ function borrarProducto(idProducto) {
   });
 }
 
-function borrarProductoAPI(idProducto) {
+function borrarProductoAPI(productCode) {
   myModal.hide();
 
   opciones = {
     method: "DELETE",
   };
 
-  fetch(URL_BORRAR + "/" + idProducto, opciones)
+  fetch(URL_BORRAR + "/" + productCode, opciones)
     .then((respuesta) => {
       if (respuesta.ok) {
         return respuesta.json();
@@ -137,7 +137,7 @@ function borrarProductoAPI(idProducto) {
     })
     .then((respuesta) => {
       muestraMsg(
-        `!Producto ${idProducto} Borrado, de locos!`,
+        `!Producto ${productCode} Borrado, de locos!`,
         "Good bye!!",
         false,
         "success"
@@ -334,6 +334,7 @@ function añadirProducto(idproducto) {
 
       // tblBody.appendChild(fila);
       detallesPedido.push({
+        id: producto.id,
         order_id: producto.order_id,
         product_code: producto.product_code,
         product_name: producto.product_name,

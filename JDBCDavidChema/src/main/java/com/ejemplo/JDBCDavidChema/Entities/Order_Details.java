@@ -38,7 +38,6 @@ public class Order_Details{
 
 	
 	
-	
 	public Order_Details() {
 		
 	}
@@ -70,7 +69,6 @@ public class Order_Details{
 		
 	}
 
-	
 	public String getProduct_name() {
 		return product_name;
 	}
