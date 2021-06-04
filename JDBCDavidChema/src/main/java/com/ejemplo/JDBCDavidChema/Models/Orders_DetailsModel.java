@@ -116,12 +116,32 @@ public class Orders_DetailsModel {
 		Boolean resultado = false;
 		PreparedStatement ps = null;
 		
-		String sql = "DELETE FROM order_details where product_id = ?";
+		String sql = "DELETE FROM order_details where id = ?";
 		
 		try {
 			
 			ps = conexion.prepareStatement(sql);
 			ps.setInt(1, idDetallesPedido);
+			
+			resultado = (ps.executeUpdate() > 0);
+			
+		} catch (SQLException e) {
+			System.out.println("Error al borrar un Detalle de Pedido " + e.getMessage());
+		}
+		
+		return resultado;
+	}
+	
+	public Boolean deletePedido(Integer idPedido) {
+		Boolean resultado = false;
+		PreparedStatement ps = null;
+		
+		String sql = "DELETE FROM order_details where order_id = ?";
+		
+		try {
+			
+			ps = conexion.prepareStatement(sql);
+			ps.setInt(1, idPedido);
 			
 			resultado = (ps.executeUpdate() > 0);
 			

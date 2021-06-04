@@ -146,4 +146,20 @@ public class Order_DetailsRest {
 		return respuesta;
 	}
 	
+	@DELETE
+	@Path("/Pedido/{idPedido}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response deletePedido(@PathParam("idPedido") Integer idPedido) {
+		Boolean detallePedidoActualizado;
+		Response respuesta;
+
+		try {
+			detallePedidoActualizado = orders_details.deletePedido(idPedido);
+			respuesta = Response.status(Response.Status.OK).entity(detallePedidoActualizado).build();
+		} catch (Exception e) {
+			respuesta = Response.status(Response.Status.NOT_FOUND).encoding("ERROR: " + e.getCause() + " " + e.getMessage()).build();
+		}
+		
+		return respuesta;
+	}
 }

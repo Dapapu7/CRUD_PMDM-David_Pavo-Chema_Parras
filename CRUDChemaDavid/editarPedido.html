@@ -1,110 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editar pedidos</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
-<link rel="icon" href="img/724package_100522.ico">
-</head>
-<body style="background-color: black;">
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo01">
-        <img src="img/pedidos.png" width="100" height="40" class="d-inline-block align-text-top ml-5 mr-5">
-        <a class="navbar-brand" href="index.html">Home Page</a>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="indexCliente.html">Clientes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="listaPedidos.html">Pedidos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="listaProductos.html">Productos</a>
-          </li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar pedidos</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
+    <link rel="icon" href="img/724package_100522.ico" />
+  </head>
+  <body style="background-color: black">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarTogglerDemo01"
+        >
+          <img
+            src="img/pedidos.png"
+            width="100"
+            height="40"
+            class="d-inline-block align-text-top ml-5 mr-5"
+          />
+          <a class="navbar-brand" href="index.html">Home Page</a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="indexCliente.html"
+                >Clientes</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="listaPedidos.html">Pedidos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="listaProductos.html">Productos</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <!-- Navbar -->
+    </nav>
+    <!-- Navbar -->
     <div class="container shadow bg-secondary mt-5 pb-1 mb-5">
-        <h1>Editar Pedido:</h1>
+      <h1>Editar Pedido:</h1>
 
-        <form class="row mt-3" name="formPedido" id="idFormPedido">
-            <div class="row">
-                <div class="col-md-2">
-                    <label for="idId" class="form-label">ID Pedido:</label>
-                    <input type="text" readonly class="form-control" id="idId" name="id" required />
-                </div>
+      <form class="row mt-3" name="formPedido" id="idFormPedido">
+        <div class="row">
+          <div class="col-md-2">
+            <label for="idId" class="form-label">ID Pedido:</label>
+            <input
+              type="text"
+              readonly
+              class="form-control"
+              id="idId"
+              name="id"
+              required
+            />
+          </div>
 
-               <div class="col-md-2"> 
-                  <label for="idcustomer_id" class="form-label">ID Cliente:</label>
-                  <input type="text" class="form-control" id="idcustomer_id" name="customer_id" required />
-                </div>
+          <div class="col-md-2">
+            <label for="idcustomer_id" class="form-label">ID Cliente:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="idcustomer_id"
+              name="customer_id"
+              required
+            />
+          </div>
 
-                <div class="col-md-2">
-                  <label for="idemployee_id" class="form-label">ID Empleado:</label>
-                  <input type="text" class="form-control" id="idemployee_id" name="employee_id" required />
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <label for="idshipper_id" class="form-label">ID Envío:</label>
-                    <input type="text" class="form-control" id="idshipper_id" name="shipper_id" />
-                </div>
-            
-                <div class="col-md-4">
-                    <label for="idship_name" class="form-label">Nombre Pedido:</label>
-                    <input type="text" class="form-control" id="idship_name" name="ship_name" required />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                  <label for="idorder_date" class="form-label">Fecha de Pedido:</label>
-                  <input type="date" class="form-control" id="idorder_date" name="order_date" required />
-                </div>
-                <div class="col-md-2">
-                  <label for="idstatus_id" class="form-label">Estado:</label>
-                  <input type="text" class="form-control" id="idstatus_id" name="status_id" required />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <label for="idship_address" class="form-label">Dirección:</label>
-                  <input type="text" class="form-control" id="idship_address" name="ship_address" required />
-                </div>
-                <div class="col-md-4">
-                  <label for="idship_state_province" class="form-label">Provincia:</label>
-                  <input type="text" class="form-control" id="idship_state_province" name="ship_state_province" required />
-                </div>
-                <div class="col-md-4">
-                  <label for="idship_zip_postal_code" class="form-label">Cód. Postal:</label>
-                  <input type="text" class="form-control" id="idship_zip_postal_code" name="ship_zip_postal_code" required />
-                </div>
-              </div>
-              <div class="row"></div>
-              <div class="row"></div>
-              <div class="row"></div>
-              <div class="row"></div>
-              <div class="row mt-3">
-                <div class="col-12">
-                  <button id="idSalvar" type="submit" disabled class="col-3 btn btn-primary">Salvar Datos</button>
-                  <button id="idCancel" class="col-3 btn btn-danger">Cancelar</button>
-                </div>
-              </div>
-        </form>
+          <div class="col-md-2">
+            <label for="idemployee_id" class="form-label">ID Empleado:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="idemployee_id"
+              name="employee_id"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <label for="idshipper_id" class="form-label">ID Envío:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="idshipper_id"
+              name="shipper_id"
+            />
+          </div>
+
+          <div class="col-md-4">
+            <label for="idship_name" class="form-label">Nombre Pedido:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="idship_name"
+              name="ship_name"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <label for="idorder_date" class="form-label"
+              >Fecha de Pedido:</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="idorder_date"
+              name="order_date"
+              required
+            />
+          </div>
+          <div class="col-md-2">
+            <label for="idstatus_id" class="form-label">Estado:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="idstatus_id"
+              name="status_id"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <label for="idship_address" class="form-label">Dirección:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="idship_address"
+              name="ship_address"
+              required
+            />
+          </div>
+          <div class="col-md-4">
+            <label for="idship_state_province" class="form-label"
+              >Provincia:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="idship_state_province"
+              name="ship_state_province"
+              required
+            />
+          </div>
+          <div class="col-md-4">
+            <label for="idship_zip_postal_code" class="form-label"
+              >Cód. Postal:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="idship_zip_postal_code"
+              name="ship_zip_postal_code"
+              required
+            />
+          </div>
+        </div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row mt-3">
+          <div class="col-12">
+            <button
+              id="idSalvar"
+              type="submit"
+              disabled
+              class="col-3 btn btn-primary"
+            >
+              Salvar Datos
+            </button>
+            <button id="idCancel" class="col-3 btn btn-danger">Cancelar</button>
+          </div>
+        </div>
+      </form>
 
       <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
         <h1></h1>
-        <h1 class="p-2 bd-highlight"><b>&nbsp&nbsp&nbsp&nbsp Listado de Productos:</b></h1>
-        <h1></h1>
-        
-        
+        <h1 class="p-2 bd-highlight">
+          <b>Listado de Productos:</b>
+        </h1>
+        <h1 class="p-2 bd-highlight">
+          <i
+            style="color: rgb(0, 0, 194)"
+            class="bi bi-plus-circle-fill"
+            id="idAddLinea"
+          ></i>
+        </h1>
       </div>
       <table class="table table-dark table-responsive table-sm table-striped">
         <thead>
@@ -113,7 +221,6 @@
             <th scope="col">Nombre:</th>
             <th scope="col">Precio unidad:</th>
             <th scope="col">Categoría:</th>
-            <th scope="col">Precio estándar:</th>
             <th scope="col">Cantidad:</th>
             <th scope="col">Acciones:</th>
           </tr>
@@ -122,47 +229,81 @@
       </table>
     </div>
 
-        <div class="modal" id="idModal" tabindex="-1">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 id="idMdlTitle" class="modal-title">Mensaje</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p id="idMdlMsg">Modal body text goes here.</p>
-              </div>
-              <div class="modal-footer">
-                <button id="idMdlClose" type="button" class="btn" style="background-color: #ffc107;" data-bs-dismiss="modal" onclick="mostrarClientes()">Cerrar</button>
-                <button id="idMdlOK" type="button" class="btn btn-primary">OK</button>
-              </div>
-            </div>
+    <div class="modal" id="idModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 id="idMdlTitle" class="modal-title">Mensaje</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p id="idMdlMsg">Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              id="idMdlClose"
+              type="button"
+              class="btn"
+              style="background-color: #ffc107"
+              data-bs-dismiss="modal"
+              onclick="mostrarClientes()"
+            >
+              Cerrar
+            </button>
+            <button id="idMdlOK" type="button" class="btn btn-primary">
+              OK
+            </button>
           </div>
         </div>
+      </div>
     </div>
 
-    <div class="container shadow bg-secondary mt-5 pb-1 mb-5">
-      <div class="d-flex flex-row bd-highlight mb-3 justify-content-between">
-        <h1 class="m-3"></h1>
-        <h1 class="p-2 bd-highlight"><b>Añadir Productos:</b></h1>
-        <h1 class="m-3"></h1>
+    <div class="modal fade" id="idAddLineaModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="container shadow bg-secondary mt-5 pb-1 mb-5 modal-body">
+            <div
+              class="d-flex flex-row bd-highlight mb-3 justify-content-between"
+            >
+              <h1 class="m-3"></h1>
+              <h1 class="p-2 bd-highlight"><b>Añadir Productos:</b></h1>
+              <h1 class="m-3"></h1>
+            </div>
+              <table
+                class="table table-dark table-responsive table-sm table-striped"
+              >
+                <thead>
+                  <tr>
+                    <th scope="col">Código:</th>
+                    <th scope="col">Nombre:</th>
+                    <th scope="col">Precio unidad:</th>
+                    <th scope="col">Categoría:</th>
+                    <th scope="col">Precio estándar:</th>
+                    <th scope="col">Cantidad:</th>
+                    <th scope="col">Añadir:</th>
+                  </tr>
+                </thead>
+                <tbody id="id_tblDetalle"></tbody>
+              </table>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
-      <table class="table table-dark table-responsive table-sm table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Código:</th>
-            <th scope="col">Nombre:</th>
-            <th scope="col">Precio unidad:</th>
-            <th scope="col">Categoría:</th>
-            <th scope="col">Precio estándar:</th>
-            <th scope="col">Cantidad:</th>
-            <th scope="col">Añadir:</th>
-          </tr>
-        </thead>
-        <tbody id="id_tblDetalle"></tbody>
-      </table>
-
+    </div>
     <script src="js/editPedido.js"></script>
-    
-</body>
+  </body>
 </html>
